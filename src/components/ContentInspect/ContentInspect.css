@@ -4,8 +4,19 @@
     margin-top: 5%;
 }
 
+.image-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
 .image{
-    width: 100%;
+    width: 94%;
+    border-radius: 21px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    
+
 }
 
 .titel{
@@ -50,7 +61,6 @@
     justify-content: center;
     padding: 0px;
     gap: 15px;
-    margin-left: ;
     
     width: 238px;
     height: 26px;
