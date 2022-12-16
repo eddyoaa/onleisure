@@ -1,0 +1,102 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+Form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+label{
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    
+    color: #000000;
+    padding-bottom: 10px;
+}
+
+.standortAbfrage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.standortEingabefeld{
+    width: 360px;
+    height: 56px;
+
+    box-sizing: border-box;
+    border: 2px solid #787878;
+    border-radius: 14px;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #787878;
+}
+
+.alterAbfrageAbschnitt{
+    display: flex;
+    flex-direction: column;
+}
+
+.alterBeideFelder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.alterEingabefeld{
+    
+    box-sizing: border-box;
+    border: 2px solid #787878;
+    border-radius: 14px;
+
+    height: 56px;
+    width: 150px;
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #787878;
+}
+
+.von-bis{
+    width: 20px;
+    height: 2px;
+    background: #787878;
+    border-radius: 2px;
+    border: 0px;
+}
+
+.ortAbfrage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.toggle-switch{
+    color: green;
+}
+
+.button-wrapper{
+    position: relative;
+    margin-top: 65%;
+    margin-left: 22%;
+    max-width: 100%;
+}
+

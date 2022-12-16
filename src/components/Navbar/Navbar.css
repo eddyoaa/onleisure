@@ -1,5 +1,5 @@
 .navbar{
-    position: absolute;
+    position: sticky;
     background-color: white;
     display: flex;
     justify-content: space-around;

@@ -1,0 +1,40 @@
+.button-dick{
+    position: absolute;
+    width: 200px;
+    height: 60px;
+
+    background: #045B86;
+    border-radius: 50px;
+    border: 0px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #FFFFFF;
+    }
+
+.button-duenn{
+    position: absolute;
+    width: 217px;
+    height: 45px;
+
+    background: "secondary";
+    border-radius: 50px;
+
+    border: 0px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.button-dick:disabled {
+    background: #C8C8C8;
+}
+
+.button-duenn:disabled {
+    background: #C8C8C8;
+}
