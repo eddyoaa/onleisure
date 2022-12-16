@@ -1,0 +1,135 @@
+.card{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 360px;
+    height: 250px;
+    
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+/*Bild*/
+.card-image{
+/* BackdropCard */
+position: absolute;
+width: 360px;
+height: 175px;
+left: 0px;
+top: 0px;
+
+background: url(https://images.sportbuzzer.de/v1/photos/raw/weg-0568/regular-16-9);
+filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.card-platzhalter{
+    /* BackdropCard */
+    position: relative;
+    width: 360px;
+    height: 175px;
+    left: 0px;
+    top: 0px;
+    
+    border-radius: 20.5px;
+    background: #c9c9c9;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
+    }
+
+
+/* DatumFrame */
+.datum-frame{
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 3px 5px;
+gap: 10px;
+
+position: absolute;
+width: 164px;
+height: 23px;
+left: 10px;
+top: 10px;
+
+/* White */
+background: #FFFFFF;
+border-radius: 50px;
+}
+
+
+
+/* Datum */
+.datum{
+width: 154px;
+height: 17px;
+position: relative;
+top: 3px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+
+/* Gray */
+color: #323232;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+
+/* Angebot Name */
+.name{
+position: absolute;
+width: 340px;
+height: 20px;
+left: 15px;
+top: 90px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+
+/* Black */
+color: #191919;
+}
+
+/* Angebot Beschreibung */
+
+.info{
+position: absolute;
+width: 340px;
+height: 35px;
+left: 15px;
+top: 193px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 15px;
+
+/* Gray */
+
+color: #323232;
+}
