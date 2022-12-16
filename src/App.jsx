@@ -1,10 +1,10 @@
 import './App.css';
-import ContentCard from './components/ContentCard/ContentCard';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { appTheme } from "./themes/theme.ts";
 import Navbar from "./components/Navbar/Navbar";
 import ContentPage from "./components/ContentPage/ContentPage";
 import FilterMenu from "./components/FilterMenu/FilterMenu";
+import ContentInspect from "./components/ContentInspect/ContentInspect";
 
 const App = () => {
   return ( 
@@ -13,7 +13,7 @@ const App = () => {
 
     <div className="app">
     <Navbar />
-    <ContentPage />
+    <ContentInspect />
     </div>
 
     </ThemeProvider>
