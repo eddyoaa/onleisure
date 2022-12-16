@@ -1,7 +1,7 @@
 import "./ContentPage.css"
 import logoShort from "../../logo_short.svg"
 
-const Content_page = () => {
+const ContentPage = () => {
    
         return (       
         <div className="content--page">
@@ -46,4 +46,4 @@ const Content_page = () => {
 }
 
  
-export default Content_page;
+export default ContentPage;

@@ -29,35 +29,36 @@ const FilterMenu = () => {
             >
         <div className="form">
             <Form>
-                <div className="standortAbfrage">
-                    <label htmlFor="standort">Standort</label>
-                    <Field className="standortEingabefeld" name="standort" type="text" placeholder="Deine Stadt" />
-                    <ErrorMessage name="standort" />
-                </div>
-                
-                <div className="alterAbfrageAbschnitt">
-                    <label htmlFor="alter_von">Alter</label>
-                    <div className="alterBeideFelder">
-                        <Field className="alterEingabefeld" name="alter_von" type="number" placeholder="Von"/>
-                        <ErrorMessage name="alter_von" />
-                        <hr className='von-bis'/>
-                        <Field className="alterEingabefeld" name="alter_bis" type="number" placeholder="Bis"/>
-                        <ErrorMessage name="alter_bis" />
+                <div className="abfragen">
+                    <div className="standortAbfrage">
+                        <label htmlFor="standort">Standort</label>
+                        <Field className="standortEingabefeld" name="standort" type="text" placeholder="Deine Stadt" />
+                        <ErrorMessage name="standort" />
                     </div>
-                </div>
+                    
+                    <div className="alterAbfrageAbschnitt">
+                        <label htmlFor="alter_von">Alter</label>
+                        <div className="alterBeideFelder">
+                            <Field className="alterEingabefeld" name="alter_von" type="number" placeholder="Von"/>
+                            <ErrorMessage name="alter_von" />
+                            <hr className='von-bis'/>
+                            <Field className="alterEingabefeld" name="alter_bis" type="number" placeholder="Bis"/>
+                            <ErrorMessage name="alter_bis" />
+                        </div>
+                    </div>
 
-                <div className="ortAbfrage">
-                    <label htmlFor="toggles">Ort</label>
-                    <div className="toggle_drinnen">
-                        <Field className="toggle-switch" name="drinnen" component={Switch} />
-                        <label htmlFor="toggles">Drinnen</label>
-                    </div>
-                    <div className="toggle_draussen">
-                        <Field name="draussen" component={Switch} color="primary" />
-                        <label htmlFor="draussen">Draußen</label>
+                    <div className="ortAbfrage">
+                        <label htmlFor="toggles">Ort</label>
+                        <div className="toggle_drinnen">
+                            <Field className="toggle-switch" name="drinnen" component={Switch} />
+                            <label htmlFor="toggles">Drinnen</label>
+                        </div>
+                        <div className="toggle_draussen">
+                            <Field name="draussen" component={Switch} color="primary" />
+                            <label htmlFor="draussen">Draußen</label>
+                        </div>
                     </div>
                 </div>
-
                 <div className="button-wrapper">    
                 <Button version="dick" isDisabled={false}>Anwenden</Button> 
                 </div>
