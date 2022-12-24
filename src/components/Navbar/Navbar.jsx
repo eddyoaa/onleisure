@@ -1,15 +1,12 @@
 import "./Navbar.css"
 import LanguageIcon from '@mui/icons-material/Language';
 import SearchIcon from '@mui/icons-material/Search';
+import ArrowIcon from '@mui/icons-material/KeyboardBackspace';
 import logoShort from "../../logo_short.svg"
-import { useState } from "react";
 
-
-const Navbar = () => {
-    const [viewStatus, setViewStatus] = useState("startPage");
-
-            //Navbar search aus
-    if (viewStatus==="startPage"){  
+const Navbar = ({navType, onNavTypeChange}) => {
+            //Navbar standard (Start Flow)
+    if (navType==="startPage"){  
         return (       
         <div className="navbar">
             <div className="icon--button">
@@ -24,8 +21,8 @@ const Navbar = () => {
         </div>
         );
     }
-            //Navbar search ein
-    else if (viewStatus==="contentPage"){
+            //Navbar (content Seite)
+    else if (navType==="contentPage"){
         return (       
             <div className="navbar">
                 <div className="icon--button" id="language">
@@ -40,6 +37,23 @@ const Navbar = () => {
             </div>
             );
     }
+            //Navbar (cardInspect Seite)
+    else if (navType==="cardInspectPage"){
+        return (       
+            <div className="navbar" id="cardInspectNavbar">
+                <div className="icon--button" id="arrow">
+                <ArrowIcon sx={{ fontSize: 32}}/>
+                </div>
+                <div className="navbar--logo">
+                    <img src={logoShort} alt="Navbar logo" width="50px" height="25px"/>
+                </div>
+                <div className="icon--button"  id="search">
+                <SearchIcon sx={{ color: "white" }}/> 
+                </div>
+            </div>
+            );
+    }
+    
 }
  
 export default Navbar;

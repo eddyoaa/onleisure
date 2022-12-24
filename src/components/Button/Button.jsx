@@ -3,9 +3,11 @@ import "./Button.css";
 
 const Button = ({children, version, isDisabled, type}) => {
     return (  
-        <button disabled={isDisabled} type={type} className={`button-${version}`}>
-            {children}
-        </button>
+        <div className="button-wrapper">
+            <button disabled={isDisabled} type={type} className={`button-${version}`}>
+                {children}
+            </button>
+        </div>
     );
 }
     Button.defaultProps = {

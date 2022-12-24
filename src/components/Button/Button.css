@@ -19,8 +19,8 @@
     width: 217px;
     height: 45px;
 
-    background: "secondary";
     border-radius: 50px;
+    background: #045B86;
 
     border: 0px;
     font-weight: 700;
@@ -37,4 +37,11 @@
 
 .button-duenn:disabled {
     background: #C8C8C8;
+}
+
+.button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
 }
