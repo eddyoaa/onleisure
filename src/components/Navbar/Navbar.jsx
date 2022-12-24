@@ -1,18 +1,31 @@
 import "./Navbar.css"
+import {Link, useNavigate} from "react-router-dom";
+import { useState } from "react";
 import LanguageIcon from '@mui/icons-material/Language';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowIcon from '@mui/icons-material/KeyboardBackspace';
 import logoShort from "../../logo_short.svg";
-import {Link, useNavigate} from "react-router-dom";
+import LanguageMenu from "../LanguageMenu/LanguageMenu";
 
 const Navbar = ({navType, onNavTypeChange}) => {
+
+    const [isShown, setIsShown] = useState(false);
+
     const navigate = useNavigate();
+
+    const handleLanguageClick = event => {
+        setIsShown(current => !current);
+    }
+
             //Navbar content Seite
     if (navType==="contentPage"){  
         return (       
         <div className="navbar">
             <div className="icon--button">
-                <LanguageIcon sx={{ fontSize: 32}} />
+                <LanguageIcon 
+                sx={{ fontSize: 32}} 
+                onClick = {handleLanguageClick}
+                />
             </div>
             <Link to="/" style={{color: "black"}}>
                 <div className="navbar--logo">
@@ -24,6 +37,7 @@ const Navbar = ({navType, onNavTypeChange}) => {
                     <SearchIcon sx={{ fontSize: 32}} />
                 </div>
             </Link>
+            {isShown && <LanguageMenu />}
         </div>
         );
     }
@@ -33,9 +47,9 @@ const Navbar = ({navType, onNavTypeChange}) => {
             <div className="navbar">
                 <div className="icon--button" id="language">
                 <LanguageIcon 
-                    sx={{ fontSize: 32}} 
-                    onClick={() =>{
-                    }}/>
+                    sx={{ fontSize: 32}}
+                    onClick = {handleLanguageClick}
+                    />
                 </div>
                 <div className="navbar--logo">
                     <img src={logoShort} alt="Navbar logo" width="50px" height="25px"/>
@@ -43,6 +57,7 @@ const Navbar = ({navType, onNavTypeChange}) => {
                 <div className="icon--button"  id="search">
                 <SearchIcon sx={{ color: "white" }}/> 
                 </div>
+                {isShown && <LanguageMenu />}
             </div>
             );
     }
