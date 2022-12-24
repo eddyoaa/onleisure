@@ -1,6 +1,7 @@
 import "./ContentPage.css"
 import ContentCard from '../ContentCard/ContentCard';
 import { useEffect } from "react";
+import {Link, useNavigate} from "react-router-dom";
 
 const ContentPage = ({navType, onNavTypeChange}) => {
 
@@ -10,10 +11,12 @@ const ContentPage = ({navType, onNavTypeChange}) => {
 
     return ( 
       <div className="app">
-      <ContentCard />
-      <ContentCard />
-      <ContentCard />
-      <ContentCard />
+      <Link to="/inspect" style={{color: "black"}}>
+        <ContentCard />
+      </Link>
+        <ContentCard />
+        <ContentCard />
+        <ContentCard />
       </div>
      );
   }
