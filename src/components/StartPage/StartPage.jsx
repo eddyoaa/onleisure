@@ -1,7 +1,13 @@
 import "./StartPage.css"
 import Button from "../Button/Button";
+import { useEffect } from "react";
 
-const StartPage = () => {
+const StartPage = ({navType, onNavTypeChange}) => {
+
+    useEffect(() => {
+        onNavTypeChange("startPage");
+      });
+      
     return ( 
         <>
         <div>
