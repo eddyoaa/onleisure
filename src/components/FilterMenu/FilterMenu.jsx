@@ -1,12 +1,17 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Switch } from '@mui/material';
 import Button from "../Button/Button";
 import "./FilterMenu.css";
 
-const FilterMenu = () => {
-  return (
+const FilterMenu = ({navType, onNavTypeChange}) => {
+
+    useEffect(() => {
+        onNavTypeChange("contentPage");
+      });
+
+    return (
       <Formik 
         initialValues={{ 
             standort: '', 

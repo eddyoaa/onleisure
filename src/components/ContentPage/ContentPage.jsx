@@ -1,8 +1,13 @@
 import "./ContentPage.css"
 import ContentCard from '../ContentCard/ContentCard';
+import { useEffect } from "react";
 
+const ContentPage = ({navType, onNavTypeChange}) => {
 
-const ContentPage = () => {
+  useEffect(() => {
+    onNavTypeChange("contentPage");
+  });
+
     return ( 
       <div className="app">
       <ContentCard />

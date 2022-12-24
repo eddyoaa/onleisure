@@ -1,8 +1,14 @@
 import "./ContentInspect.css"
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
+import { useEffect } from "react";
 
-const ContentInspect = () => {
+const ContentInspect = ({navType, onNavTypeChange}) => {
+
+    useEffect(() => {
+        onNavTypeChange("cardInspectPage");
+      });
+
     return ( 
         <div className="inspectPage">
             <div className="image-wrapper">
