@@ -1,0 +1,129 @@
+.inspectPage{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.image-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.image{
+    width: 94%;
+    border-radius: 21px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    
+
+}
+
+.titel{
+    margin-left: 15px;
+    width: 350px;
+    height: 25px;
+
+
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+
+    /* Black */
+
+    color: #191919;
+}
+
+.info-contentInspect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* Gray */
+
+    color: #323232;
+}
+
+.kategorienLeiste{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 15px;
+    justify-content: center;
+    padding: 0px;
+    gap: 15px;
+    
+    width: 238px;
+    height: 26px;
+    
+}
+
+.kategorie{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    gap: 5px;
+
+
+
+    width: 67px;
+    height: 26px;
+
+    /* Grün */
+
+    background: #00C192;
+    border-radius: 50px;
+
+    font-weight: 700;
+    font-size: 12.5px;
+    line-height: 16px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #FFFFFF;
+
+}
+
+.infotext{
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    
+    /* Gray */
+    
+    color: #323232;
+}
+
+.kontakt{
+    margin-left: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.kontaktText{
+
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    
+
+    /* Gray */
+
+    color: #323232;
+
+}

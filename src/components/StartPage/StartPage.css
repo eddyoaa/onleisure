@@ -1,0 +1,25 @@
+.Sport {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left: calc(50% - (250px/2));
+    top: 175px;
+}
+
+.Intro {
+
+    position: absolute;
+    width: 275px;
+    height: 75px;
+    left: calc(50% - (275px/2));
+    top: 475px;
+    justify-content: center;
+    text-align: center;
+    color: #000000; 
+}
+
+.Standort{
+    position: absolute;
+    top: 650px;
+    left: calc(50% - (200px/2));
+}
