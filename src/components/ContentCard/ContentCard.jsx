@@ -1,6 +1,6 @@
 import "./ContentCard.css"
 
-const ContentCard = () => {
+const ContentCard = ({data}) => {
    
         return (       
         <div className="card">
@@ -14,7 +14,7 @@ const ContentCard = () => {
 
         
             <div className="name">
-               <p>Fußball...</p>
+               <p>{data.title}</p>
             </div>
             <div className="info">
                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>

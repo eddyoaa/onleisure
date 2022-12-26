@@ -2,9 +2,12 @@ import "./ContentInspect.css"
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import { useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 
 const ContentInspect = ({navType, onNavTypeChange}) => {
-
+    const location = useLocation();
+    const data = location.state;
+    console.log({data});
     useEffect(() => {
         onNavTypeChange("cardInspectPage");
       });
@@ -16,7 +19,7 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
             </div>
             <div className="content">
                 <div className="titel">
-                    <p>Fußball Training - FC Teutonia</p>
+                    <p>{data.title}</p>
                 </div>
                 <div className="info-contentInspect">
                     <p>24.12.2022 - 15Uhr</p>

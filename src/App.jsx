@@ -26,6 +26,7 @@ const App = () => {
             <Route path="/content" element={<ContentPage navType = {navType} onNavTypeChange = {setNavType}/>}/>
             <Route path="/filter" element={<FilterMenu navType = {navType} onNavTypeChange = {setNavType}/>} />
             <Route path="/inspect" element={<ContentInspect navType = {navType} onNavTypeChange = {setNavType}/>} />
+            <Route path="/inspect/:id" element={<ContentInspect navType = {navType} onNavTypeChange = {setNavType}/>} />
           </Routes>
         </div>
       </div>
