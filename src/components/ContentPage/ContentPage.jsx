@@ -3,7 +3,7 @@ import ContentCard from '../ContentCard/ContentCard';
 import { useEffect } from "react";
 import {Link, useNavigate} from "react-router-dom";
 
-const ContentPage = ({navType, onNavTypeChange}) => {
+const ContentPage = ({navType, onNavTypeChange, data, onDataChange}) => {
 
   const db = [{title:"Eins", id: "1"}, {title: "zwei", id: "2"}];
 

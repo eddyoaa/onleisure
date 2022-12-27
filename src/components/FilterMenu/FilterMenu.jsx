@@ -5,7 +5,7 @@ import { Switch } from '@mui/material';
 import Button from "../Button/Button";
 import "./FilterMenu.css";
 
-const FilterMenu = ({navType, onNavTypeChange}) => {
+const FilterMenu = ({navType, onNavTypeChange, search, onSearhChange}) => {
 
     useEffect(() => {
         onNavTypeChange("contentPage");
@@ -29,10 +29,9 @@ const FilterMenu = ({navType, onNavTypeChange}) => {
             })}
 
         onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
-                setSubmitting(false);
-                }, 400);
+            setSubmitting(false);
+            console.log(JSON.stringify(values));
+            onSearhChange(values);
             }}
             >
                         {({
