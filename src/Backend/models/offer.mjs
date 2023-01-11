@@ -7,12 +7,12 @@ const validator = Validator;
 const timeRegex = new RegExp(/^(10|11|12|[1-9]):[0-5][0-9]$/);
 
 
-const OfferSchema = new Schema({
+const offerSchema = new Schema({
 
     title:  {  type: String,
         required: true },
 
-    discription:  {  type: String,
+    description:  {  type: String,
         required: true
     },
    
@@ -40,7 +40,7 @@ const OfferSchema = new Schema({
             required: true
          }, 
 
-    age:  {  type: Array,
+    age:  {  type: [String],
             required: true,
             min: 0,
             max: 120
@@ -74,5 +74,5 @@ const OfferSchema = new Schema({
 
 
 
-const Offer = mongoose.model('Offer', OfferSchema)
-export default Offer;
+const offer = mongoose.model('offer', offerSchema)
+export default offer;
