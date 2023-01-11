@@ -19,6 +19,11 @@ const OfferSchema = new Schema({
     adress:  {  type: String,
             required: true
         },
+
+
+    city:  {  type: String,
+            required: true
+        },
            
     date :    {  type: String,
             required: true,
@@ -36,7 +41,7 @@ const OfferSchema = new Schema({
               }
          }, 
 
-    age:  {  type: Number,
+    age:  {  type: Array,
             required: true,
             min: 0,
             max: 120

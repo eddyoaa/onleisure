@@ -8,18 +8,8 @@ import bodyParser from 'body-parser';
 
 const app = express();
 const port = process.env.PORT || 80;
-
-app.use(bodyParser.json({
-    type: function() {
-      return true;
-    },
-  }));
-
-//start local db
-// "C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe" --dbpath="c:\data\db"
-
-// const uri = `mongodb+srv://OnLeisureTeam:thisisasecret@onleisure.vxla4xe.mongodb.net/?retryWrites=true&w=majority`;
-const uri = 'mongodb://localhost:27017';
+// const uri = `mongodb+srv://LeaScal:5bFHraQUJtK0mRDW@backendprojekt.kmmdivn.mongodb.net/?retryWrites=true&w=majority`;
+const uri = 'mongodb+srv://OnLeisureTeam:thisisasecret@onleisure.vxla4xe.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.set('strictQuery', true); 
 
@@ -48,6 +38,28 @@ app.get('/offers', async (req, res) => {
         res.status(500).send(error.message);
     }   
   });
+
+  app.get('/search', async (req, res) => { 
+    try
+    {
+        const adress = req.body.adress;
+        const city = req.body.city;
+        const age = [req.body.age];
+        const location_Inside = req.body.location_Inside;
+        const location_Outside = req.body.location_Outside;
+        const results = await offer.find({
+                                        adress: adress, city: city, age: age,
+                                        location_Inside: location_Inside,
+                                        location_Outside: location_Outside
+                                        });
+        console.log(results);
+        return res.status(200).send(results);
+    } catch (error)
+    {
+        res.status(500).send(error.message);
+    }   
+  });
+  
 
 app.get('/offer/:id', async (req, res) => {
     try
