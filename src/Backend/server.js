@@ -7,8 +7,7 @@ import process from 'node:process';
 const app = express();
 const port = process.env.PORT || 80;
 // const uri = `mongodb+srv://LeaScal:5bFHraQUJtK0mRDW@backendprojekt.kmmdivn.mongodb.net/?retryWrites=true&w=majority`;
-const uri = 'mongodb+srv://OnLeisureTeam:thisisasecret@onleisure.vxla4xe.mongodb.net/?retryWrites=true&w=majority';
-
+const uri = 'mongodb://localhost:27017'
 mongoose.set('strictQuery', true); 
 
 const connectToDB = async () => {
@@ -50,7 +49,7 @@ app.get('/offer/:id', async (req, res) => {
     }
     });
   
-app.post('/OfferCreate', async (req, res) => {
+app.post('/offerCreate', async (req, res) => {
     try 
     {
         const offer = new Offer( req.body )
