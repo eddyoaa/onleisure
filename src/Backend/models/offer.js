@@ -13,9 +13,9 @@ const OfferSchema = new Schema({
         required: true
     },
    
-    Image:  {  type: Image,
-        required: true
-    },
+    // Image:  {  type: Image,
+    //     required: true
+    // },
     adress:  {  type: String,
             required: true
         },
