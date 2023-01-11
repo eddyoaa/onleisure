@@ -4,6 +4,9 @@ import Validator from 'validator';
 const { Schema } = mongoose;
 const validator = Validator;
 
+const timeRegex = new RegExp(/^(10|11|12|[1-9]):[0-5][0-9]$/);
+
+
 const OfferSchema = new Schema({
 
     title:  {  type: String,
@@ -23,17 +26,13 @@ const OfferSchema = new Schema({
     date :    {  type: String,
             required: true,
             validate: {
-                validator: time => validator.isDate(time),
-                message: 'time is not valid.'
+                validator: date => validator.isDate(date),
+                message: 'date is not valid.'
               }
          }, 
 
          time :    {  type: String,
-            required: true,
-            validate: {
-                validator: time => validator.isDate(time),
-                message: 'time is not valid.'
-              }
+            required: true
          }, 
 
     age:  {  type: Number,
