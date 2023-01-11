@@ -13,14 +13,22 @@ const OfferSchema = new Schema({
         required: true
     },
    
-    Image:  {  type: Image,
+    image:  {  type: Image,
         required: true
     },
     adress:  {  type: String,
             required: true
         },
            
-    time :    {  type: String,
+    date :    {  type: String,
+            required: true,
+            validate: {
+                validator: time => validator.isDate(time),
+                message: 'time is not valid.'
+              }
+         }, 
+
+         time :    {  type: String,
             required: true,
             validate: {
                 validator: time => validator.isDate(time),
