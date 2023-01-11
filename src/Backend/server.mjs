@@ -47,20 +47,26 @@ app.get('/offers', async (req, res) => {
 
   app.get('/search', async (req, res) => { 
     let query = {};
+    if (req.body.city){
+        query = { ...query, city: req.body.city};
+    }
+    if(req.body.age){
+        query = { ...query, age: req.body.age};
+    }
+    if(req.body.location_Inside){
+        query = { ...query, location_Inside: req.body.location_Inside};
+    }
+    if(req.body.location_Outside){
+        query = { ...query, location_Outside: req.body.location_Outside};
+    }
+    if(req.body.activity){
+        query = { ...query, activity: req.body.activity};
+    }
+
+    console.log(query);
     try
     {
-        const city = req.body.city;
-        const age = req.body.age;
-        const location_Inside = req.body.location_Inside;
-        const location_Outside = req.body.location_Outside;
-        const activity = req.body.activity;
-        const results = await Offer.find({
-            city: city, 
-            age: age,
-            location_Inside: location_Inside,
-            location_Outside: location_Outside,
-            activity: activity
-        });
+        const results = await Offer.find(query);
         console.log(results);
         return res.status(200).send(results);
     } catch (error)
