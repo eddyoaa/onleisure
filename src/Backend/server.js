@@ -1,13 +1,13 @@
 import express from 'express';
 //import { MongoClient } from 'mongodb';
 import mongoose from 'mongoose';
-import Offer from "./models/offer";
+import Offer from "./models/offer.js";
 import process from 'node:process';
 
 const app = express();
 const port = process.env.PORT || 80;
 // const uri = `mongodb+srv://LeaScal:5bFHraQUJtK0mRDW@backendprojekt.kmmdivn.mongodb.net/?retryWrites=true&w=majority`;
-const uri = 'mongodb://localhost:27017/test';
+const uri = 'mongodb+srv://OnLeisureTeam:thisisasecret@onleisure.vxla4xe.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.set('strictQuery', true); 
 
