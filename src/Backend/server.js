@@ -1,13 +1,26 @@
 import express from 'express';
 //import { MongoClient } from 'mongodb';
 import mongoose from 'mongoose';
-import Offer from "./models/offer.js";
+import offer from "./models/offer.js";
 import process from 'node:process';
+import bodyParser from 'body-parser';
+
 
 const app = express();
 const port = process.env.PORT || 80;
-// const uri = `mongodb+srv://LeaScal:5bFHraQUJtK0mRDW@backendprojekt.kmmdivn.mongodb.net/?retryWrites=true&w=majority`;
-const uri = 'mongodb://localhost:27017'
+
+app.use(bodyParser.json({
+    type: function() {
+      return true;
+    },
+  }));
+
+//start local db
+// "C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe" --dbpath="c:\data\db"
+
+// const uri = `mongodb+srv://OnLeisureTeam:thisisasecret@onleisure.vxla4xe.mongodb.net/?retryWrites=true&w=majority`;
+const uri = 'mongodb://localhost:27017';
+
 mongoose.set('strictQuery', true); 
 
 const connectToDB = async () => {
@@ -27,7 +40,7 @@ app.use(express.json());
 app.get('/offers', async (req, res) => { 
     try
     {
-        const results = await Offer.find({});
+        const results = await offer.find({});
         console.log(results);
         return res.status(200).send(results);
     } catch (error)
@@ -40,7 +53,7 @@ app.get('/offer/:id', async (req, res) => {
     try
     {
         const id = req.params.id;
-        const results = await Offer.findById(id);
+        const results = await offer.findById(id);
         console.log(results);
         return res.status(200).send(results);
     } catch (error)
@@ -52,7 +65,7 @@ app.get('/offer/:id', async (req, res) => {
 app.post('/offerCreate', async (req, res) => {
     try 
     {
-        const offer = new Offer( req.body )
+        const offer = new offer( req.body )
         await offer.save()
         res.status(200).send(offer)
     } catch(error) 
@@ -64,7 +77,7 @@ app.post('/offerCreate', async (req, res) => {
   app.patch('/offer', async (req, res) => { 
     try
     {
-        await Offer.findByIdAndUpdate(req.body,req.body,{runValidators: true});
+        await offer.findByIdAndUpdate(req.body,req.body,{runValidators: true});
         res.status(200).send("OK");
     } 
     catch(error) 
@@ -77,7 +90,7 @@ app.delete('/offer/:id', async (req, res) => {
     try
     {
         const id = req.params.id;
-        const results = await Offer.deleteOne({ _id: id });
+        const results = await offer.deleteOne({ _id: id });
         console.log(results);
         res.status(200).send("OK");
     } 
@@ -87,3 +100,6 @@ app.delete('/offer/:id', async (req, res) => {
     }
     })
 
+    app.listen(80, function() {
+        console.log('listening on 80');
+      });
