@@ -37,7 +37,9 @@ connectToDB()
 app.use(express.json());
 
 //Endpoints Offer
-app.get('/offers', async (req, res) => { 
+app.get('/search', async (req, res) => { 
+    const searchValues = req.body;
+
     try
     {
         const results = await offer.find({});
@@ -62,7 +64,7 @@ app.get('/offer/:id', async (req, res) => {
     }
     });
   
-app.post('/offerCreate', async (req, res) => {
+app.post('/create', async (req, res) => {
     try 
     {
         const offer = new offer( req.body )
