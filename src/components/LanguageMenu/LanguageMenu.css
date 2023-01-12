@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    height: 160px;
+    max-width: 390px;
+    padding-bottom: 10px;
+}
+  
+.table-left {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 50%;
+    font-size: 20px;
+}
+  
+.vertical-line {
+    position: relative;
+    border-left: 2px solid rgb(200, 200, 200);
+    top: 10px;
+    height: 150px;
+}
+  
+.table-right {
+    position: relative;
+    width: 48%;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+}
