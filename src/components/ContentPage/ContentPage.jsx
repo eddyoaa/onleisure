@@ -22,14 +22,19 @@ const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSe
 //                         })
 //                         });
 
+                const bobsledteam =  JSON.stringify({
+                    "city": "München"
+                     })
                         useEffect(()=> {
                             console.log("Console: fetch API");
                             const fetchPictures = async () => {
-                                return( await fetch(`http://localhost:80/offers`, {
-                                    method: "GET", 
+                                return( await fetch(`http://localhost:80/search`, {
+                                    method: "POST", 
                                     withCredentials: true,    
-                                    crossorigin: true      
+                                    crossorigin: true, 
+                                    body: bobsledteam
                                   })
+                                 
                                   );
                             };
                     
