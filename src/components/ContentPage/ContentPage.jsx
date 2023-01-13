@@ -3,11 +3,13 @@ import ContentCard from '../ContentCard/ContentCard';
 import { useEffect } from "react";
 import {Link, useNavigate, useLocation} from "react-router-dom";
 
-const ContentPage = ({navType, onNavTypeChange, data, onDataChange}) => {
+const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSearchChange}) => {
   const location = useLocation();
   const searchQuery = location.state;
 
-  console.log("hier die Search" + {searchQuery});
+  useEffect(() => {
+    console.log("hier die Search " + search);
+    },[search, onSearchChange]);
 
   const db = [{title:"Eins", id: "1"}, {title: "zwei", id: "2"}];
 
