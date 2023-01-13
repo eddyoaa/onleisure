@@ -13,7 +13,7 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearhChange}) => {
         onNavTypeChange("contentPage");
       });
 
-    {toContent ? redirect("/content"): null}
+   // {toContent ? redirect("/content"): null}
     
     return (
         <>

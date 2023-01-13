@@ -33,7 +33,9 @@ const App = () => {
                                               navType = {navType} 
                                               onNavTypeChange = {setNavType}
                                               data = {data}
-                                              onDataChange = {setData}/>}/>
+                                              onDataChange = {setData}
+                                              search = {search}
+                                              onSearchChange = {setSearch}/>}/>
             <Route path="/filter" element={<FilterMenu 
                                               navType = {navType} 
                                               onNavTypeChange = {setNavType}
