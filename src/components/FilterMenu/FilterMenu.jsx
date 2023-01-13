@@ -18,17 +18,17 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
      {toContent && <Navigate to="/content"/>}
       <Formik 
         initialValues={{ 
-            standort: '', 
-            kategorie: "", 
-            alter: "", 
-            drinnen: "false", 
-            draussen: "false"}}
+            city: search.city, 
+            activity: "", 
+            age: "", 
+            location_Inside: "true", 
+            location_Outside: "true"}}
 
         validationSchema={Yup.object({
-            standort: Yup.string()
+            city: Yup.string()
             .max(15, 'Must be 15 characters or less')
             .required('Required'),
-            alter: Yup.string()
+            age: Yup.string()
             .max(2, 'Must be 2 characters or less'),
             })}
 
@@ -52,14 +52,14 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
             <Form>
                 <div className="abfragen">
                     <div className="standortAbfrage">
-                        <label htmlFor="standort">Standort</label>
-                        <Field className="standortEingabefeld" name="standort" type="text" placeholder="Gib deine Stadt ein..." />
-                        <ErrorMessage name="standort" />
+                        <label htmlFor="city">Standort</label>
+                        <Field className="standortEingabefeld" name="city" type="text" placeholder="Gib deine Stadt ein..." />
+                        <ErrorMessage name="city" />
                     </div>
                     
                     <div className="kategorieAbfrage">
-                        <label htmlFor="kategorie">Aktivität</label>
-                        <Field className="kategorieEingabefeld" name="kategorie" as="select" placeholder="Wähle eine Kategrie aus...">
+                        <label htmlFor="activity">Aktivität</label>
+                        <Field className="kategorieEingabefeld" name="activity" as="select" placeholder="Wähle eine Kategrie aus...">
                             <option disabled value="">Wähle eine Aktivität...</option>
                             <option></option>
                             <option>Fußball</option>
@@ -68,14 +68,14 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
                             <option>Tupperparty</option>
                         </Field>
 
-                        <ErrorMessage name="kategorie" />
+                        <ErrorMessage name="activity" />
                     </div>
 
                     <div className="alterAbfrageAbschnitt">
-                        <label htmlFor="alter">Alter</label>
+                        <label htmlFor="age">Alter</label>
                         <div className="alterBeideFelder">
-                            <Field className="alterEingabefeld" name="alter" type="number" placeholder="Von"/>
-                            <ErrorMessage name="alter" />
+                            <Field className="alterEingabefeld" name="age" type="number" placeholder="Von"/>
+                            <ErrorMessage name="age" />
                         </div>
                     </div>
 
@@ -84,26 +84,26 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
                         <div className="toggle_drinnen">
                         <Switch
                                         className="toggle-switch" 
-                                        name="drinnen"
+                                        name="location_Inside"
                                         value="true"
-                                        checked={values.drinnen === "true"}
+                                        checked={values.location_Inside === "true"}
                                         onChange={(event, checked) => {
-                                            setFieldValue("drinnen", checked ? "true" : "false");
+                                            setFieldValue("location_Inside", checked ? "true" : "false");
                                         }}
                                         />
-                            <label htmlFor="drinnen">Drinnen</label>
+                            <label htmlFor="location_Inside">Drinnen</label>
                         </div>
                         <div className="toggle_draussen">
                                         <Switch
                                         className="toggle-switch" 
-                                        name="draussen"
+                                        name="location_Outside"
                                         value="true"
-                                        checked={values.draussen === "true"}
+                                        checked={values.location_Outside === "true"}
                                         onChange={(event, checked) => {
-                                            setFieldValue("draussen", checked ? "true" : "false");
+                                            setFieldValue("location_Outside", checked ? "true" : "false");
                                         }}
                                         />
-                            <label htmlFor="draussen">Draußen</label>
+                            <label htmlFor="location_Outside">Draußen</label>
                         </div>
                     </div>
                 </div>
