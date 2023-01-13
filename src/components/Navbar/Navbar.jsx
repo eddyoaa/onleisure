@@ -19,7 +19,8 @@ const Navbar = ({navType, onNavTypeChange}) => {
 
             //Navbar content Seite
     if (navType==="contentPage"){  
-        return (       
+        return (
+        <>
         <div className="navbar">
             <div className="icon--button">
                 <LanguageIcon 
@@ -37,13 +38,17 @@ const Navbar = ({navType, onNavTypeChange}) => {
                     <SearchIcon sx={{ fontSize: 32}} />
                 </div>
             </Link>
+        </div>
+        <div className="languagemenu">
             {isShown && <LanguageMenu />}
         </div>
+        </>
         );
     }
             //Navbar standard (Start Flow)
     else if (navType==="startPage"){
-        return (       
+        return (    
+            <>   
             <div className="navbar">
                 <div className="icon--button" id="language">
                 <LanguageIcon 
@@ -57,8 +62,12 @@ const Navbar = ({navType, onNavTypeChange}) => {
                 <div className="icon--button"  id="search">
                 <SearchIcon sx={{ color: "white" }}/> 
                 </div>
+
+            </div>
+            <div className="languagemenu">
                 {isShown && <LanguageMenu />}
             </div>
+            </>
             );
     }
             //Navbar (cardInspect Seite)

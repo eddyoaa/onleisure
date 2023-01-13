@@ -21,5 +21,8 @@
 .Standort{
     position: absolute;
     top: 650px;
-    left: calc(50% - (200px/2));
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -0.5 * height;
+    margin-left: -0.5 * width;
 }
