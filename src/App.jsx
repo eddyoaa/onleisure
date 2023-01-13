@@ -36,7 +36,7 @@ const App = () => {
                                               data = {data}
                                               onDataChange = {setData}
                                               search = {search}
-                                              onSearchChange = {setSearch}/>} />
+                                              onSearchChange = {setSearch}/>}/>
             <Route path="/filter" element={<FilterMenu 
                                               navType = {navType} 
                                               onNavTypeChange = {setNavType}

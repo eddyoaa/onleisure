@@ -22,15 +22,18 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
                     <p>{data.title}</p>
                 </div>
                 <div className="info-contentInspect">
-                    <p>24.12.2022 - 15Uhr</p>
-                    <p>Schwere-Reiter-Str. 13, 80637</p>
+                    <p>{data.date}</p>
+                    <p>{data.time}Uhr</p>
+                    <p>{data.adress}</p>
+                    
                 </div>
                 <div className="kategorienLeiste">
-                    <p className="kategorie">Fußball</p>
-                    <p className="kategorie">18-26 J</p>
-                    <p className="kategorie">Outdoor</p>
+                    <p className="kategorie">{data.activity}</p>
+                    <p className="kategorie">{data.age[1]}</p>
+                    {(data.location_Outside) && <p className="kategorie">Outdoor</p>}
+                    {(data.location_Inside) && <p className="kategorie">Indoor</p>}
                 </div>
-                <p className="infotext">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et </p>
+                <p className="infotext">{data.beschreibung}</p>
                 <div className="kontakt">
                     <LocalPhoneIcon sx={{ fontSize: 32}}/>
                     <p className="kontaktText">0162/823193223</p>

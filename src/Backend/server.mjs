@@ -32,13 +32,19 @@ const connectToDB = async () => {
 connectToDB()
 app.use(express.json());
 
+app.all('/*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next()
+  });
+
 //Endpoints Offer
 app.get('/offers', async (req, res) => { 
     try
     {
         const results = await Offer.find({});
         console.log(results);
-        return res.status(200).send(results);
+         res.status(200).send(results);
     } catch (error)
     {
         res.status(500).send(error.message);
