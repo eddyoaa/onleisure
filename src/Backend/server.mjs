@@ -51,7 +51,7 @@ app.get('/offers', async (req, res) => {
     }   
   });
 
-  app.get('/search', async (req, res) => { 
+  app.post('/search', async (req, res) => { 
     let query = {};
     if (req.body.city){
         query = { ...query, city: req.body.city};
