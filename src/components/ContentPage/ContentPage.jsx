@@ -1,9 +1,13 @@
 import "./ContentPage.css"
 import ContentCard from '../ContentCard/ContentCard';
 import { useEffect } from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useNavigate, useLocation} from "react-router-dom";
 
 const ContentPage = ({navType, onNavTypeChange, data, onDataChange}) => {
+  const location = useLocation();
+  const searchQuery = location.state;
+
+  console.log("hier die Search" + {searchQuery});
 
   const db = [{title:"Eins", id: "1"}, {title: "zwei", id: "2"}];
 

@@ -1,17 +1,22 @@
-import {React, useEffect} from 'react';
+import {React, useEffect, useState} from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Switch } from '@mui/material';
 import Button from "../Button/Button";
 import "./FilterMenu.css";
+import { redirect } from 'react-router-dom';
 
 const FilterMenu = ({navType, onNavTypeChange, search, onSearhChange}) => {
+    const [toContent, setToContent] = useState(false);
 
     useEffect(() => {
         onNavTypeChange("contentPage");
       });
 
+    {toContent ? redirect("/content"): null}
+    
     return (
+        <>
       <Formik 
         initialValues={{ 
             standort: '', 
@@ -32,6 +37,7 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearhChange}) => {
             setSubmitting(false);
             console.log(JSON.stringify(values));
             onSearhChange(values);
+            setToContent(true);
             }}
             >
                         {({
@@ -100,13 +106,16 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearhChange}) => {
                         </div>
                     </div>
                 </div>
-                <div className="button-container">    
+                <div className="button-container">   
+                {/* <Link to={{pathname: "/content"}} state={values} style={{color: "black"}}> */}
                 <Button type="submit" version="dick" isDisabled={false}>Anwenden</Button> 
+                {/* </Link> */}
                 </div>
             </Form>
          </div>
         )}
     </Formik>
+    </>
   );
 };
 
