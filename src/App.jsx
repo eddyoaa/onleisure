@@ -2,7 +2,7 @@ import './App.css';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { appTheme } from "./themes/theme.ts";
 import { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
 import ContentPage from "./components/ContentPage/ContentPage";
 import StartPage from "./components/StartPage/StartPage"
@@ -24,7 +24,8 @@ const App = () => {
         />
         <div className="content">
           <Routes>
-            <Route path="/" element={<StartPage 
+            <Route path="/" element={ <Navigate to="/start" /> }/> 
+            <Route path="/start" element={<StartPage 
                                         navType = {navType} 
                                         onNavTypeChange = {setNavType}
                                         search = {search}
@@ -33,7 +34,9 @@ const App = () => {
                                               navType = {navType} 
                                               onNavTypeChange = {setNavType}
                                               data = {data}
-                                              onDataChange = {setData}/>}/>
+                                              onDataChange = {setData}
+                                              search = {search}
+                                              onSearchChange = {setSearch}/>} />
             <Route path="/filter" element={<FilterMenu 
                                               navType = {navType} 
                                               onNavTypeChange = {setNavType}

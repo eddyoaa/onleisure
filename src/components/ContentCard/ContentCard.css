@@ -123,12 +123,15 @@ color: #191919;
 }
 
 /* Alter */
-.alter{
+.alter-text{
     position: absolute;
-    left: 300px;
+    left: 280px;
     top: 3px;
 
     font-size: 13px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
 }
 
 /* Angebot Beschreibung */
@@ -138,7 +141,7 @@ position: absolute;
 width: 340px;
 height: 35px;
 left: 15px;
-top: 193px;
+top: 189px;
 
 font-family: 'Inter';
 font-style: normal;

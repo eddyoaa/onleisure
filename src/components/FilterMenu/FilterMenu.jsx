@@ -4,19 +4,18 @@ import * as Yup from 'yup';
 import { Switch } from '@mui/material';
 import Button from "../Button/Button";
 import "./FilterMenu.css";
-import { redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
-const FilterMenu = ({navType, onNavTypeChange, search, onSearhChange}) => {
+const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
     const [toContent, setToContent] = useState(false);
-
+    console.log("Search" + search);
     useEffect(() => {
         onNavTypeChange("contentPage");
       });
-
-    {toContent ? redirect("/content"): null}
     
     return (
         <>
+     {toContent && <Navigate to="/content"/>}
       <Formik 
         initialValues={{ 
             standort: '', 
@@ -35,8 +34,9 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearhChange}) => {
 
         onSubmit={(values, { setSubmitting }) => {
             setSubmitting(false);
-            console.log(JSON.stringify(values));
-            onSearhChange(values);
+            console.log("Search Values:" + JSON.stringify(values));
+            onSearchChange(JSON.stringify(values));
+            console.log(search);
             setToContent(true);
             }}
             >
@@ -61,6 +61,7 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearhChange}) => {
                         <label htmlFor="kategorie">Aktivität</label>
                         <Field className="kategorieEingabefeld" name="kategorie" as="select" placeholder="Wähle eine Kategrie aus...">
                             <option disabled value="">Wähle eine Aktivität...</option>
+                            <option></option>
                             <option>Fußball</option>
                             <option>Teetreff</option>
                             <option>Brettspiele</option>
@@ -107,9 +108,7 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearhChange}) => {
                     </div>
                 </div>
                 <div className="button-container">   
-                {/* <Link to={{pathname: "/content"}} state={values} style={{color: "black"}}> */}
-                <Button type="submit" version="dick" isDisabled={false}>Anwenden</Button> 
-                {/* </Link> */}
+                <Button type="submit" version="dick" isDisabled={false}>Suchen</Button> 
                 </div>
             </Form>
          </div>

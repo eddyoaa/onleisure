@@ -15,7 +15,7 @@ const ContentCard = ({data}) => {
         
             <div className="name">
                <p>{data.title}</p>
-               <div className="alter"> <p>0-99</p> </div>
+               <div className="alter-text"> <p>00-99 J</p> </div>
             </div>
             <div className="info">
                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
