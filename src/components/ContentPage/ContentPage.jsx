@@ -3,26 +3,12 @@ import ContentCard from '../ContentCard/ContentCard';
 import { useEffect, useState } from "react";
 import {Link, useNavigate, useLocation} from "react-router-dom";
 
-const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSearchChange, search, onSearchChange}) => {
-  const location = useLocation();
-  const searchQuery = location.state;
-
+const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSearchChange}) => {
   const [fetchedData, setFetchedData] = useState("");
 
   useEffect(() => {
     console.log("hier die Search " + search);
     },[search, onSearchChange]);
-
-//   useEffect(() => {
-//                         fetch('http://localhost:80/offers')
-//                         .then(res => {
-//                             return res.json();
-//                         })
-//                         .then(data =>{
-//                             console.log(data);
-//                             db=data;
-//                         })
-//                         });
 
                 const bobsledteam =  JSON.stringify({
                     "city": "München"
@@ -34,7 +20,7 @@ const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSe
                                     method: "POST", 
                                     withCredentials: true,    
                                     crossorigin: true, 
-                                    body: bobsledteam
+                                    body: search
                                   })
                                  
                                   );

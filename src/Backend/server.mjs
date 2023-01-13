@@ -8,6 +8,8 @@ import bodyParser from 'body-parser';
 
 const app = express();
 const port = process.env.PORT || 80;
+// stating local db:
+// "C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe" --dbpath="c:\data\db"
 // const uri = `mongodb+srv://LeaScal:5bFHraQUJtK0mRDW@backendprojekt.kmmdivn.mongodb.net/?retryWrites=true&w=majority`;
 const uri = 'mongodb://localhost:27017';
 
@@ -51,7 +53,7 @@ app.get('/offers', async (req, res) => {
     }   
   });
 
-  app.get('/search', async (req, res) => { 
+  app.post('/search', async (req, res) => { 
     let query = {};
     if (req.body.city){
         query = { ...query, city: req.body.city};
