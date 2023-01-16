@@ -10,9 +10,8 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
     const [toContent, setToContent] = useState(false);
     console.log("Search" + search);
     useEffect(() => {
-        onNavTypeChange("contentPage");
+        onNavTypeChange("filterPage");
       });
-    
     return (
         <>
      {toContent && <Navigate to="/content"/>}
@@ -26,17 +25,17 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
 
         validationSchema={Yup.object({
             city: Yup.string()
-            .max(15, 'Must be 15 characters or less')
-            .required('Required'),
+            .max(15, 'Der Stadtname ist zu lang!')
+            .required('Bitte angeben'),
             age: Yup.string()
-            .max(2, 'Must be 2 characters or less'),
+            .max(2, 'Nur 2 Zahlen pls'),
             })}
 
         onSubmit={(values, { setSubmitting }) => {
             setSubmitting(false);
+            values.city=values.city.toLowerCase();
             console.log("Search Values:" + JSON.stringify(values));
             onSearchChange(JSON.stringify(values));
-            console.log(search);
             setToContent(true);
             }}
             >
@@ -51,9 +50,9 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
         <div className="form">
             <Form>
                 <div className="abfragen">
-                    <div className="standortAbfrage">
+                    <div className="standortAbfrageFilter">
                         <label htmlFor="city">Standort</label>
-                        <Field className="standortEingabefeld" name="city" type="text" placeholder="Gib deine Stadt ein..." />
+                        <Field className="standortEingabefeld" name="city" type="text" placeholder="Gib deine Stadt ein..."/>
                         <ErrorMessage name="city" />
                     </div>
                     

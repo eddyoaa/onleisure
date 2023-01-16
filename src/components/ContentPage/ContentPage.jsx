@@ -1,7 +1,7 @@
 import "./ContentPage.css"
 import ContentCard from '../ContentCard/ContentCard';
 import { useEffect, useState } from "react";
-import {Link, useNavigate, useLocation} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSearchChange}) => {
   const [fetchedData, setFetchedData] = useState("");
@@ -10,9 +10,6 @@ const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSe
     console.log("hier die Search " + search);
     },[search, onSearchChange]);
 
-                const bobsledteam =  JSON.stringify({
-                    "city": "München"
-                     })
                         useEffect(()=> {
                             console.log("Console: fetch API");
                             const fetchPictures = async () => {

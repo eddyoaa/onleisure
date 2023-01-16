@@ -1,28 +1,64 @@
-.Sport {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    left: calc(50% - (250px/2));
-    top: 175px;
+.startPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.Intro {
-
-    position: absolute;
-    width: 275px;
-    height: 75px;
-    left: calc(50% - (275px/2));
-    top: 475px;
+.pageOne {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 75px;
     text-align: center;
+    top: 475px;
     color: #000000; 
 }
 
-.Standort{
+.pageThree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    bottom: 300px;
+    color: #000000; 
+}
+
+.button{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    top: 200px;
+}
+
+.standortAbfrage{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+    top: 100px;
+    height: 277px;
+}
+
+.buttons--wrapper{
     position: absolute;
-    top: 650px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: -0.5 * height;
-    margin-left: -0.5 * width;
+    display: flex;
+    flex-direction: column;
+    top: 670px;
+    gap: 90px;
+}
+
+.playerOne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 40%;
 }

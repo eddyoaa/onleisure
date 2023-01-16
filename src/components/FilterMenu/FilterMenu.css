@@ -27,7 +27,7 @@ label{
     padding-bottom: 10px;
 }
 
-.standortAbfrage{
+.standortAbfrageFilter{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,5 +128,8 @@ label{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 170px;
+    position: absolute;
+    margin-top: 10px;
+    bottom: 50px;
+    margin-bottom: 50px;
 }

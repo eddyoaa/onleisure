@@ -1,0 +1,35 @@
+import "./StartPage.css"
+import Button from "../Button/Button";
+import { Player } from '@lottiefiles/react-lottie-player';
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import morphAnimation from "../../lottiefiles/morphing animation.json"
+
+const StartPageOne = ({navType, onNavTypeChange}) => {
+
+    
+    useEffect(() => {
+        onNavTypeChange("startPageOne");
+      });
+
+    return ( 
+        <div className="startPage">
+        <div>
+            <Player
+            src={morphAnimation}
+            className="playerOne"
+            loop
+            autoplay/>
+             <h1 className="pageOne">
+                Finde deine neue Freizeitaktivität
+            </h1>
+        </div>
+        <Link to="/standort" style={{color: "black"}}>
+        <div className="button">
+            <Button version="dick" isDisabled={false}>Starten</Button>
+        </div>
+        </Link>
+        </div>
+     );}
+ 
+export default StartPageOne;

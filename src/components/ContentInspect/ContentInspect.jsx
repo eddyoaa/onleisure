@@ -12,6 +12,13 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
         onNavTypeChange("cardInspectPage");
       });
 
+    function datumUmwandler(date){
+        const info = date.split("-");
+        const newDatum=`${info[2]}.${info[1]}.${info[0]}`;
+
+        return newDatum;
+    }
+
     return ( 
         <div className="inspectPage">
             <div className="image-wrapper">
@@ -22,18 +29,18 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
                     <p>{data.title}</p>
                 </div>
                 <div className="info-contentInspect">
-                    <p>{data.date}</p>
-                    <p>{data.time}Uhr</p>
+                    <p>{datumUmwandler(data.date) + " - " + data.time + "Uhr"}</p>
                     <p>{data.adress}</p>
                     
                 </div>
                 <div className="kategorienLeiste">
                     <p className="kategorie">{data.activity}</p>
-                    <p className="kategorie">{data.age[1]}</p>
+                    <p className="kategorie">{data.age[0] + "-" + data.age.at(-1) + " J"}</p>
                     {(data.location_Outside) && <p className="kategorie">Outdoor</p>}
                     {(data.location_Inside) && <p className="kategorie">Indoor</p>}
                 </div>
-                <p className="infotext">{data.beschreibung}</p>
+                <p className="infotext">{data.description}</p>
+                <p className="kontaktÜberschrift">Kontakt</p>
                 <div className="kontakt">
                     <LocalPhoneIcon sx={{ fontSize: 32}}/>
                     <p className="kontaktText">0162/823193223</p>
