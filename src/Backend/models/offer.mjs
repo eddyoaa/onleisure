@@ -16,9 +16,10 @@ const offerSchema = new Schema({
         required: true
     },
    
-    // Image:  {  type: Image,
-    //     required: true
-    // },
+     image:  {  type: BSON,
+         required: true
+    },
+
     adress:  {  type: String,
             required: true
         },

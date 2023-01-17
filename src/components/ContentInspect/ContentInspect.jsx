@@ -29,18 +29,18 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
                 </div>
                 <div className="kategorienLeiste">
                     <p className="kategorie">{data.activity}</p>
-                    <p className="kategorie">{data.age[1]}</p>
+                    <p className="kategorie">{data.age[0]}-{data.age[-1]}</p>
                     {(data.location_Outside) && <p className="kategorie">Outdoor</p>}
                     {(data.location_Inside) && <p className="kategorie">Indoor</p>}
                 </div>
-                <p className="infotext">{data.beschreibung}</p>
+                <p className="infotext">{data.description}</p>
                 <div className="kontakt">
                     <LocalPhoneIcon sx={{ fontSize: 32}}/>
-                    <p className="kontaktText">0162/823193223</p>
+                    <p className="kontaktText">{data.telefon}</p>
                 </div>
                 <div className="kontakt">
                     <EmailIcon sx={{ fontSize: 32}}/>
-                    <p className="kontaktText">max.mustermann@gmx.de</p>
+                    <p className="kontaktText">{data.eMail}</p>
                 </div>
             </div>
         </div>

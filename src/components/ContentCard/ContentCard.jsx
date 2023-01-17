@@ -1,7 +1,7 @@
 import "./ContentCard.css"
 
 const ContentCard = ({data}) => {
-   
+
         return (       
         <div className="card">
 
@@ -15,7 +15,7 @@ const ContentCard = ({data}) => {
         
             <div className="name">
                <p>{data.title}</p>
-               <div className="alter"> <p>0-99</p> </div>
+               <div className="alter"> <p>{data.age[0]}-{data.age[data.age.length - 1]}</p> </div>
             </div>
             <div className="info">
                <p>{data.description}</p>
