@@ -1,0 +1,38 @@
+.createPages{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contentCreateFinish{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20%;
+}
+
+.createFininsh{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.mediImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 250px;
+    height: 223.68px;
+}
