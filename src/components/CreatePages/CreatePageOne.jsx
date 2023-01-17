@@ -2,16 +2,19 @@ import "./CreatePages.css"
 import Button from "../Button/Button";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { LinearProgress } from '@mui/material';
 
-const CreatePageOne = ({navType, onNavTypeChange}) => {
+const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValueChange}) => {
 
     
     useEffect(() => {
-        onNavTypeChange("cardInspectPage");
+        onNavTypeChange("createPage");
+        onProgressValueChange(0);
       });
 
     return ( 
-        <div className="startPage">
+        <div className="createPages">
+  
         <Link to="/create/2" style={{color: "black"}}>
         <div className="button">
             <Button version="dick" isDisabled={false}>Weiter</Button>

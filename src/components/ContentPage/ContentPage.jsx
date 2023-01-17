@@ -39,7 +39,15 @@ const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSe
   useEffect(() => {
     onNavTypeChange("contentPage");
   });
-if(fetchedData!==""){
+if(fetchedData==""){
+  return(
+    <div className="noSearch">
+      <p>Leider wurde nicht´s zu deiner Suche gefunden</p>
+    </div>
+  )
+}
+else{
+  console.log("FetchedData" + fetchedData);
   const contentItems = fetchedData.map((data, index) => 
   <Link to={{pathname: `/inspect/${data._id}`}} state={data} key={index} style={{color: "black"}}>
     <ContentCard 
@@ -52,7 +60,7 @@ if(fetchedData!==""){
         {contentItems}
       </div>
      );
-  }
+      }
 }
    
   export default ContentPage;
