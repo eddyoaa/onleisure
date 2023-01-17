@@ -43,11 +43,11 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
                 <p className="kontaktÜberschrift">Kontakt</p>
                 <div className="kontakt">
                     <LocalPhoneIcon sx={{ fontSize: 32}}/>
-                    <p className="kontaktText">0162/823193223</p>
+                    <p className="kontaktText">{data.telefon}</p>
                 </div>
                 <div className="kontakt">
                     <EmailIcon sx={{ fontSize: 32}}/>
-                    <p className="kontaktText">max.mustermann@gmx.de</p>
+                    <p className="kontaktText">{data.eMail}</p>
                 </div>
             </div>
         </div>
