@@ -19,10 +19,12 @@ import CreatePageInspect from './components/CreatePages/CreatePageInspect';
 import CreatePageFinish from './components/CreatePages/CreatePageFinish';
 
 const App = (props) => {
-  const [navType, setNavType] = useState("contentPage");
+  const [navType, setNavType] = useState("startPage");
   const [search, setSearch] = useState("");
   const [data, setData] = useState("");
+  const [progressValue, setProgressValue] = useState(0);
 
+  console.log(navType);
   return ( 
     <ThemeProvider theme={appTheme}>
     <CssBaseline enableColorScheme />
@@ -31,6 +33,7 @@ const App = (props) => {
         <Navbar  
           navType = {navType}
           onNavTypeChange = {setNavType}
+          progressValue={progressValue}
         />
         <div className="content">
           <Routes>
@@ -63,19 +66,29 @@ const App = (props) => {
                                                   onNavTypeChange = {setNavType}/>} />
             <Route path="/create/1" element={<CreatePageOne 
                                                   navType = {navType} 
-                                                  onNavTypeChange = {setNavType}/>} />
+                                                  onNavTypeChange = {setNavType}
+                                                  progressValue={progressValue}
+                                                  onProgressValueChange={setProgressValue}/>} />
             <Route path="/create/2" element={<CreatePageTwo
                                                   navType = {navType} 
-                                                  onNavTypeChange = {setNavType}/>} />
+                                                  onNavTypeChange = {setNavType}
+                                                  progressValue={progressValue}
+                                                  onProgressValueChange={setProgressValue}/>} />
             <Route path="/create/3" element={<CreatePageThree
                                                   navType = {navType} 
-                                                  onNavTypeChange = {setNavType}/>} />
+                                                  onNavTypeChange = {setNavType}
+                                                  progressValue={progressValue}
+                                                  onProgressValueChange={setProgressValue}/>} />
             <Route path="/create/4" element={<CreatePageFour
                                                   navType = {navType} 
-                                                  onNavTypeChange = {setNavType}/>} />
+                                                  onNavTypeChange = {setNavType}
+                                                  progressValue={progressValue}
+                                                  onProgressValueChange={setProgressValue}/>} />
             <Route path="/create/5" element={<CreatePageFive 
                                                   navType = {navType} 
-                                                  onNavTypeChange = {setNavType}/>} />
+                                                  onNavTypeChange = {setNavType}
+                                                  progressValue={progressValue}
+                                                  onProgressValueChange={setProgressValue}/>} />
             <Route path="/create/inspect" element={<CreatePageInspect 
                                                   navType = {navType} 
                                                   onNavTypeChange = {setNavType}/>} />

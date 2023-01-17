@@ -9,7 +9,8 @@ const StartPageOne = ({navType, onNavTypeChange}) => {
 
     
     useEffect(() => {
-        onNavTypeChange("startPageOne");
+        if(navType!=="startPage"){
+        onNavTypeChange("startPageOne");}
       });
 
     return ( 
@@ -18,8 +19,8 @@ const StartPageOne = ({navType, onNavTypeChange}) => {
             <Player
             src={morphAnimation}
             className="playerOne"
-            loop
-            autoplay/>
+            autoplay
+            loop/>
              <h1 className="pageOne">
                 Finde deine neue Freizeitaktivität
             </h1>
