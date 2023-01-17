@@ -23,6 +23,7 @@ const App = (props) => {
   const [search, setSearch] = useState("");
   const [data, setData] = useState("");
   const [progressValue, setProgressValue] = useState(0);
+  const [createValues, setCreateValues] = useState("");
 
   console.log(navType);
   return ( 
@@ -68,30 +69,42 @@ const App = (props) => {
                                                   navType = {navType} 
                                                   onNavTypeChange = {setNavType}
                                                   progressValue={progressValue}
-                                                  onProgressValueChange={setProgressValue}/>} />
+                                                  onProgressValueChange={setProgressValue}
+                                                  createValues = {createValues}
+                                                  onCreateValuesChange = {setCreateValues}/>} />
             <Route path="/create/2" element={<CreatePageTwo
                                                   navType = {navType} 
                                                   onNavTypeChange = {setNavType}
                                                   progressValue={progressValue}
-                                                  onProgressValueChange={setProgressValue}/>} />
+                                                  onProgressValueChange={setProgressValue}
+                                                  createValues = {createValues}
+                                                  onCreateValuesChange = {setCreateValues}/>} />
             <Route path="/create/3" element={<CreatePageThree
                                                   navType = {navType} 
                                                   onNavTypeChange = {setNavType}
                                                   progressValue={progressValue}
-                                                  onProgressValueChange={setProgressValue}/>} />
+                                                  onProgressValueChange={setProgressValue}
+                                                  createValues = {createValues}
+                                                  onCreateValuesChange = {setCreateValues}/>} />
             <Route path="/create/4" element={<CreatePageFour
                                                   navType = {navType} 
                                                   onNavTypeChange = {setNavType}
                                                   progressValue={progressValue}
-                                                  onProgressValueChange={setProgressValue}/>} />
+                                                  onProgressValueChange={setProgressValue}
+                                                  createValues = {createValues}
+                                                  onCreateValuesChange = {setCreateValues}/>} />
             <Route path="/create/5" element={<CreatePageFive 
                                                   navType = {navType} 
                                                   onNavTypeChange = {setNavType}
                                                   progressValue={progressValue}
-                                                  onProgressValueChange={setProgressValue}/>} />
+                                                  onProgressValueChange={setProgressValue}
+                                                  createValues = {createValues}
+                                                  onCreateValuesChange = {setCreateValues}/>} />
             <Route path="/create/inspect" element={<CreatePageInspect 
                                                   navType = {navType} 
-                                                  onNavTypeChange = {setNavType}/>} />
+                                                  onNavTypeChange = {setNavType}
+                                                  createValues = {createValues}
+                                                  onCreateValuesChange = {setCreateValues}/>} />
             <Route path="/create/finish" element={<CreatePageFinish
                                                   navType = {navType} 
                                                   onNavTypeChange = {setNavType}/>} />

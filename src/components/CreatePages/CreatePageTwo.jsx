@@ -16,8 +16,8 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
         <div className="createPages">
 
         <Link to="/create/3" style={{color: "black"}}>
-        <div className="button">
-            <Button version="dick" isDisabled={false}>Weiter</Button>
+        <div className="button" id="create">
+            <Button version="duenn" isDisabled={false}>Weiter</Button>
         </div>
         </Link>
         </div>

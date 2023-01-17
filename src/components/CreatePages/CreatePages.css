@@ -15,6 +15,7 @@ border-radius: 15px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 5%;
 }
 
 .contentCreateFinish{
@@ -48,4 +49,18 @@ border-radius: 15px;
 
     width: 250px;
     height: 223.68px;
+}
+
+#create{
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    top: 720px;
+    left: 0px;
+    max-width: 100%;
+    background-color: white;
+    height: 100px;
+    z-index: 99;
 }
