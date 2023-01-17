@@ -6,6 +6,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import ArrowIcon from '@mui/icons-material/KeyboardBackspace';
 import logoShort from "../../logo_short.svg";
 import LanguageMenu from "../LanguageMenu/LanguageMenu";
+import { Player } from "@lottiefiles/react-lottie-player";
+import logoAnimation from "../../lottiefiles/logo animation.json"
 
 const Navbar = ({navType, onNavTypeChange}) => {
 
@@ -16,31 +18,54 @@ const Navbar = ({navType, onNavTypeChange}) => {
     const handleLanguageClick = event => {
         setIsShown(current => !current);
     }
-
             //Navbar content Seite
     if (navType==="contentPage"){  
         return (
         <>
         <div className="navbar">
-            <div className="icon--button">
-                <LanguageIcon 
-                sx={{ fontSize: 32}} 
-                onClick = {handleLanguageClick}
-                />
-            </div>
-            <Link to="/" style={{color: "black"}}>
-                <div className="navbar--logo">
-                    <img src={logoShort} alt="Navbar logo" width="50px" height="25px"/>
-                </div>
-            </Link>
-            <Link to="/filter" style={{color: "black"}}>
+            <div className="topbar">
                 <div className="icon--button">
-                    <SearchIcon sx={{ fontSize: 32}} />
+                    <LanguageIcon 
+                    sx={{ fontSize: 32}} 
+                    onClick = {handleLanguageClick}
+                    />
                 </div>
-            </Link>
+                <Link to="/" style={{color: "black"}}>
+                    <div className="navbar--logo">
+                        <img src={logoShort} alt="Navbar logo" width="50px" height="25px"/>
+                    </div>
+                </Link>
+                <Link to="/filter" style={{color: "black"}}>
+                    <div className="icon--button">
+                        <SearchIcon sx={{ fontSize: 32}} />
+                    </div>
+                </Link>
+            </div>
+         {isShown && <div className="languagemenu"> <LanguageMenu /> </div>}
         </div>
-        <div className="languagemenu">
-            {isShown && <LanguageMenu />}
+        </>
+        );
+    }
+    else if (navType==="filterPage"){  
+        return (
+        <>
+        <div className="navbar">
+            <div className="topbar">
+                <div className="icon--button">
+                    <LanguageIcon sx={{ color: "white" }}/>
+                </div>
+                <Link to="/" style={{color: "black"}}>
+                    <div className="navbar--logo">
+                        <img src={logoShort} alt="Navbar logo" width="50px" height="25px"/>
+                    </div>
+                </Link>
+                <Link to="/content" style={{color: "black"}}>
+                    <div className="icon--button">
+                        <SearchIcon 
+                        sx={{ fontSize: 32}} />
+                    </div>
+                </Link>
+            </div>
         </div>
         </>
         );
@@ -50,22 +75,53 @@ const Navbar = ({navType, onNavTypeChange}) => {
         return (    
             <>   
             <div className="navbar">
-                <div className="icon--button" id="language">
-                <LanguageIcon 
-                    sx={{ fontSize: 32}}
-                    onClick = {handleLanguageClick}
-                    />
-                </div>
-                <div className="navbar--logo">
-                    <img src={logoShort} alt="Navbar logo" width="50px" height="25px"/>
-                </div>
-                <div className="icon--button"  id="search">
-                <SearchIcon sx={{ color: "white" }}/> 
-                </div>
+                <div className="topbar">
+                    <div className="icon--button" id="language">
+                    <LanguageIcon 
+                        sx={{ fontSize: 32}}
+                        onClick = {handleLanguageClick}
+                        />
+                    </div>
+                    <Link to="/" style={{color: "black"}}>
+                    <div className="navbar--logo"> 
+                        <img src={logoShort} alt="Navbar logo" width="50px" height="25px"/>
+                    </div>
+                    </Link>
+                    <div className="icon--button"  id="search">
+                    <SearchIcon sx={{ color: "white" }}/> 
+                    </div>
 
+                </div>
+                {isShown && <div className="languagemenu"> <LanguageMenu /> </div>}
             </div>
-            <div className="languagemenu">
-                {isShown && <LanguageMenu />}
+            </>
+            );
+    }
+    else if (navType==="startPageOne"){
+        return (    
+            <>   
+            <div className="navbar">
+                <div className="topbar" id="startPageOne">
+                    <div className="icon--button" id="language">
+                    <LanguageIcon 
+                        sx={{ fontSize: 32}}
+                        onClick = {handleLanguageClick}
+                        />
+                    </div>
+                    <Link to="/" style={{color: "black"}}>
+                    <div className="navbar--logo"> 
+                            <Player className="navbar-player"
+                                src={logoAnimation}
+                                autoplay
+                                onComplete/>
+                    </div>
+                    </Link>
+                    <div className="icon--button"  id="search">
+                    <SearchIcon sx={{ color: "white" }}/> 
+                    </div>
+
+                </div>
+                {isShown && <div className="languagemenu"> <LanguageMenu /> </div>}
             </div>
             </>
             );
@@ -73,19 +129,21 @@ const Navbar = ({navType, onNavTypeChange}) => {
             //Navbar (cardInspect Seite)
     else if (navType==="cardInspectPage"){
         return (       
-            <div className="navbar" id="cardInspectNavbar">
-                <div className="icon--button" id="arrow">
-                <ArrowIcon 
-                    sx={{ fontSize: 32}} 
-                    onClick={() => {navigate(-1)}}/>
-                </div>
-                <Link to="/" style={{color: "black"}}>
-                    <div className="navbar--logo">
-                        <img src={logoShort} alt="Navbar logo" width="50px" height="25px"/>
+            <div className="navbar">
+                <div className="topbar" id="cardInspectNavbar">
+                    <div className="icon--button" id="arrow">
+                    <ArrowIcon 
+                        sx={{ fontSize: 32}} 
+                        onClick={() => {navigate(-1)}}/>
                     </div>
-                </Link>
-                <div className="icon--button"  id="search">
-                <SearchIcon sx={{ color: "white" }}/> 
+                    <Link to="/" style={{color: "black"}}>
+                        <div className="navbar--logo">
+                            <img src={logoShort} alt="Navbar logo" width="50px" height="25px"/>
+                        </div>
+                    </Link>
+                    <div className="icon--button"  id="search">
+                    <SearchIcon sx={{ color: "white" }}/> 
+                    </div>
                 </div>
             </div>
             );

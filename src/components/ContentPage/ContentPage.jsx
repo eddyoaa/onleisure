@@ -1,30 +1,15 @@
 import "./ContentPage.css"
 import ContentCard from '../ContentCard/ContentCard';
 import { useEffect, useState } from "react";
-import {Link, useNavigate, useLocation} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSearchChange}) => {
-  const location = useLocation();
-  const searchQuery = location.state;
-
   const [fetchedData, setFetchedData] = useState("");
 
-  console.log("hier die Search" + {searchQuery});
+  useEffect(() => {
+    console.log("hier die Search " + search);
+    },[search, onSearchChange]);
 
-//   useEffect(() => {
-//                         fetch('http://localhost:80/offers')
-//                         .then(res => {
-//                             return res.json();
-//                         })
-//                         .then(data =>{
-//                             console.log(data);
-//                             db=data;
-//                         })
-//                         });
-
-                const bobsledteam =  JSON.stringify({
-                    "city": "München"
-                     })
                         useEffect(()=> {
                             console.log("Console: fetch API");
                             const fetchPictures = async () => {
@@ -32,7 +17,7 @@ const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSe
                                     method: "POST", 
                                     withCredentials: true,    
                                     crossorigin: true, 
-                                    body: bobsledteam
+                                    body: search
                                   })
                                  
                                   );
