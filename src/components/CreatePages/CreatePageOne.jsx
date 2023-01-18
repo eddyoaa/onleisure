@@ -16,9 +16,9 @@ const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValue
     return ( 
         <div className="createPages">
             
-            <h2 className="text-one">
+            <h3 className="text-one">
                 Lade hier deine Fotos hoch
-            </h2>
+            </h3>
 
             <div className="image-frame">
                     <div className="icon-image">

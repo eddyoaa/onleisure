@@ -16,7 +16,7 @@ const StartPageTwo = ({search, onSearchChange, navType, onNavTypeChange}) => {
         return ( 
             
             <div className="startPage">
-           
+            {toSearchCreate && <Navigate to="/searchcreate"/>}
             <Formik 
         initialValues={{ 
             city: search.city
