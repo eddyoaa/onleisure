@@ -31,3 +31,59 @@ border-radius: 15px;
     color: #323232;
 }
 
+
+
+.createPages{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.contentCreateFinish{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20%;
+}
+
+.createFininsh{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.mediImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    width: 250px;
+    height: 223.68px;
+}
+
+#create{
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    top: 720px;
+    left: 0px;
+    max-width: 100%;
+    background-color: white;
+    height: 100px;
+    z-index: 99;
+}

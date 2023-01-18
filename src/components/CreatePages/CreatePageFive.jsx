@@ -15,8 +15,8 @@ const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValu
     return ( 
         <div className="createPages">
         <Link to="/create/inspect" style={{color: "black"}}>
-        <div className="button">
-            <Button version="dick" isDisabled={false}>Weiter</Button>
+        <div className="button" id="create">
+            <Button version="duenn" isDisabled={false}>Weiter</Button>
         </div>
         </Link>
         </div>
