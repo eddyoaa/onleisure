@@ -3,8 +3,10 @@ import Button from "../Button/Button";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LinearProgress } from '@mui/material';
+import * as Yup from 'yup';
 
 const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValueChange}) => {
+    
 
     
     useEffect(() => {
@@ -14,6 +16,7 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
 
     return ( 
         <div className="createPages">
+
 
         <Link to="/create/3" style={{color: "black"}}>
         <div className="button">
