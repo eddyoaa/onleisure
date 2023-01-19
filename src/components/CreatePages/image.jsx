@@ -1,6 +1,5 @@
 import {React, useState } from "react";
 import "./image.css";
-import {readAsArrayBuffer} from "file-reader"
 
 /**
  * Component to handle file upload. Works for image
@@ -13,7 +12,7 @@ function FileUpload({file, onFileChange}) {
   // Handles file upload event and updates state
   function handleUpload(event) {
     setImage(event.target.files[0]);
-    onFileChange(ImageToBuffer(event.target.files[0]));
+    //onFileChange(ImageToBuffer(event.target.files[0]));
 
     // Add code here to upload file to server
     // ...
@@ -35,10 +34,10 @@ console.log(image);
 
 
 
-async function ImageToBuffer(file){
-        const bitmap = await readAsArrayBuffer(file);
-        return bitmap;
-      }
+// async function ImageToBuffer(file){
+//         const bitmap = await readAsArrayBuffer(file);
+//         return bitmap;
+//       }
 
 
 /**
