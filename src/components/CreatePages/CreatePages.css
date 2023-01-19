@@ -259,3 +259,14 @@ border-radius: 14px;
     text-align: top;
 
 }
+
+.ortAbfrage2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.toggle-switch2{
+    color: green;
+}

@@ -21,7 +21,7 @@ const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValu
             <Formik
             initialValues={{ 
                 telefon: createValues.telefon,
-                eMail: createValues.eMail 
+                eMail: createValues.email 
             }}
     
             validationSchema={Yup.object({
@@ -34,6 +34,7 @@ const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValu
                     
                     console.log("Create Values:" + JSON.stringify(values));
                     onCreateValuesChange(JSON.stringify(values));
+                      
                     setToValueCreate(true);
                     }}
             >
