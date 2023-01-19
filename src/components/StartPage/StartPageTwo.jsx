@@ -53,7 +53,7 @@ const StartPageTwo = ({search, onSearchChange, navType, onNavTypeChange}) => {
                         <Field className="standortEingabefeld" name="city" type="text" placeholder="Gib deine Stadt ein..." />
                         <ErrorMessage name="city" />
                     </div>
-                <div className="button">
+                <div className="buttonStart">
                 <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
                 </div>
