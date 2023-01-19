@@ -72,7 +72,7 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
                         <ErrorMessage name="description" />
                     </div>
 
-                <div className="button">
+                <div className="buttonCreate">
                 <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
                 </div>

@@ -91,7 +91,7 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
                         <ErrorMessage name="time" />
                     </div>
 
-                <div className="button">
+                <div className="buttonCreate3">
                 <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
                 </div>

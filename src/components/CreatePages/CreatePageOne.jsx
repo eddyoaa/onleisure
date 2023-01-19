@@ -29,7 +29,7 @@ const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValue
             </div>
             <Link to="/create/2" style={{color: "black"}}>
                 <div className="buttonCreate" id="create">
-                    <Button version="duenn" isDisabled={false}>Weiter</Button>
+                    <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
             </Link>
         </div>
