@@ -40,9 +40,15 @@ border-radius: 15px;
     margin-top: 20vh;
 }
 
+.buttonCreate4{
+    margin-top: 20vh;
+}
+
 .text-one{
-    margin-top: 50px;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
     text-align: center;
+    font-size: 28px;
 }
 
 
@@ -111,9 +117,7 @@ border-radius: 15px;
 
 .AlterAbfragen{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
     width: 360px;
     height: 56.33px;
     left: 15px;
@@ -123,30 +127,22 @@ border-radius: 15px;
 
 .alter1Eingabefeld{
 
-    box-sizing: border-box;
+    text-align: center;
+    width: 40%;
+    font-size: 24px;
 
-position: absolute;
-left: 0%;
-right: 58.33%;
-top: 0%;
-bottom: 0.59%;
+    /* Mittel grau */
 
-/* Mittel grau */
-
-border: 2px solid #787878;
-border-radius: 14px;
+    border: 2px solid #787878;
+    border-radius: 14px;
 
 }
 
 .alter2Eingabefeld{
 
-    box-sizing: border-box;
-
-    position: absolute;
-    left: 58.33%;
-    right: 0%;
-    top: 0.59%;
-    bottom: 0%;
+    text-align: center;
+    width: 40%;
+    font-size: 24px;
     
     /* Mittel grau */
     
@@ -154,6 +150,7 @@ border-radius: 14px;
     border-radius: 14px;
 
 }
+
 
 .kategorieEingabefeld{
     position: absolute;
@@ -236,13 +233,19 @@ border-radius: 14px;
 }
 
 .TitelAbfragen{
-
     width: 360px;
     height: 56px;
     left: 15px;
     top: 25vh;
 
 
+}
+
+.abfragen{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height:100px;
 }
 
 .ZeitEingabefeld{
@@ -276,8 +279,7 @@ border-radius: 14px;
 
 .toggle_drinnen{
     position: relative;
-    left: -90px;
-    margin-top: 6vh;
+    margin-top: 2vh;
 }
 
 .toggle_draussen{

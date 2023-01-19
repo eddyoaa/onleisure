@@ -67,7 +67,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
         }) => (
         <div className="form">
             <Form>
-                <div className="abfragen">
+                <div className="abfragen" id="createPageOne">
                     <h3 className="text-one">Gib mehr Details an</h3>
                     <h3 className="labelAlter">Alter</h3>
                     <div className="AlterAbfragen">
@@ -124,7 +124,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
 
                 
 
-                <div className="buttonCreate">
+                <div className="buttonCreate4">
                     <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
                 </div>
