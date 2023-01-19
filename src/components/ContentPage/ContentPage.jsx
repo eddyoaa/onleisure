@@ -2,6 +2,8 @@ import "./ContentPage.css"
 import ContentCard from '../ContentCard/ContentCard';
 import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
+import loadingAnimation from "../../lottiefiles/loading animation.json"
+import { Player } from '@lottiefiles/react-lottie-player';
 
 const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSearchChange}) => {
   const [fetchedData, setFetchedData] = useState("");
@@ -41,8 +43,13 @@ const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSe
   });
 if(fetchedData==""){
   return(
-    <div className="noSearch">
-      <p>Leider wurde nicht´s zu deiner Suche gefunden</p>
+    <div className="loadingContent">
+      <Player
+            src={loadingAnimation}
+            className="loadingPlayer"
+            autoplay
+            loop/>
+            <p className="loadingText"> Wird geladen...</p>
     </div>
   )
 }

@@ -12,6 +12,16 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
         onNavTypeChange("cardInspectPage");
       });
 
+      let ageFormated;
+
+      if(data.age.length===1){
+          ageFormated = data.age[0] + " J";
+      }
+      else {
+          ageFormated = data.age[0] + "-" + data.age.at(-1) + " J";
+      }
+
+
     function datumUmwandler(date){
         const info = date.split("-");
         const newDatum=`${info[2]}.${info[1]}.${info[0]}`;
@@ -35,7 +45,7 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
                 </div>
                 <div className="kategorienLeiste">
                     <p className="kategorie">{data.activity}</p>
-                    <p className="kategorie">{data.age[0] + "-" + data.age.at(-1) + " J"}</p>
+                    <p className="kategorie">{ageFormated}</p>
                     {(data.location_Outside) && <p className="kategorie">Outdoor</p>}
                     {(data.location_Inside) && <p className="kategorie">Indoor</p>}
                 </div>
