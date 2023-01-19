@@ -16,24 +16,13 @@
     color: #000000; 
 }
 
-.pageThree {
+.startpageThree {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     text-align: center;
-    bottom: 300px;
+    bottom: 400px;
     color: #000000; 
-}
-
-.button{
-    position:relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    width: 100%;
-    top: 200px;
 }
 
 .standortAbfrage{
@@ -56,14 +45,19 @@
     gap: 90px;
 }
 
+.buttonStart{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    top: 200px;
+}
+
 .playerOne{
     display: flex;
     justify-content: center;
     align-items: center;
     scale: 40%;
 }
-
-.button{
-
-    top: 100px;
- }
