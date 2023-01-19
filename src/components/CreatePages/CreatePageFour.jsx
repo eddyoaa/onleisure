@@ -89,7 +89,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
 
                     <div className="ortAbfrage2">
                         <label htmlFor="toggles">Ort</label>
-                        <div className="toggle_drinnen">
+                        <div className="toggle_drinnen2">
                         <Switch
                                         className="toggle-switch2" 
                                         name="location_Inside"
@@ -101,7 +101,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                                         />
                             <label htmlFor="location_Inside">Drinnen</label>
                         </div>
-                        <div className="toggle_draussen">
+                        <div className="toggle_draussen2">
                                         <Switch
                                         className="toggle-switch2" 
                                         name="location_Outside"
@@ -129,7 +129,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
 
                 
 
-                <div className="button">
+                <div className="button-create4">
                     <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
                 </div>
