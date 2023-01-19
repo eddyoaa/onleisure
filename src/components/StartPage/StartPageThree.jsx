@@ -16,7 +16,7 @@ const StartPageThree = ({navType, onNavTypeChange}) => {
             <img
             src={sportImage}
             className="playerOne"/>
-                         <h1 className="pageThree">
+                         <h1 className="startpageThree">
                             Finde deine neue Freizeitaktivität
                         </h1>
                 <div className="buttons--wrapper">
