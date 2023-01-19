@@ -8,6 +8,7 @@ import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import { create, all } from "mathjs";
 import * as Yup from 'yup';
+import { Switch } from '@mui/material';
 import { Description } from "@mui/icons-material";
 
 const Math = create(all)
@@ -85,6 +86,34 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                         <Field className="alter2Eingabefeld" name="age2" type="text" placeholder="Bis..." />
                         <ErrorMessage name="description" />
                     </div>
+
+                    <div className="ortAbfrage2">
+                        <label htmlFor="toggles">Ort</label>
+                        <div className="toggle_drinnen">
+                        <Switch
+                                        className="toggle-switch2" 
+                                        name="location_Inside"
+                                        value="true"
+                                        checked={values.location_Inside === "true"}
+                                        onChange={(event, checked) => {
+                                            setFieldValue("location_Inside", checked ? "true" : "false");
+                                        }}
+                                        />
+                            <label htmlFor="location_Inside">Drinnen</label>
+                        </div>
+                        <div className="toggle_draussen">
+                                        <Switch
+                                        className="toggle-switch2" 
+                                        name="location_Outside"
+                                        value="true"
+                                        checked={values.location_Outside === "true"}
+                                        onChange={(event, checked) => {
+                                            setFieldValue("location_Outside", checked ? "true" : "false");
+                                        }}
+                                        />
+                            <label htmlFor="location_Outside">Draußen</label>
+                        </div>
+                        </div>
 
                     <div className="AktivitätAbfragen">
                         <h4 className="labelAktiv">Aktivität</h4>

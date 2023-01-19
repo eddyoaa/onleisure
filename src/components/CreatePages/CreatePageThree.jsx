@@ -11,7 +11,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
-
+console.log(createValues);
     
     useEffect(() => {
         onNavTypeChange("createPage");
