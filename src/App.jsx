@@ -24,6 +24,7 @@ const App = (props) => {
   const [data, setData] = useState("");
   const [progressValue, setProgressValue] = useState(0);
   const [createValues, setCreateValues] = useState("");
+  const [savedValues, setValues] = useState([JSON]);
 
   console.log(navType);
   return ( 
@@ -71,7 +72,9 @@ const App = (props) => {
                                                   progressValue={progressValue}
                                                   onProgressValueChange={setProgressValue}
                                                   createValues = {createValues}
-                                                  onCreateValuesChange = {setCreateValues}/>} />
+                                                  onCreateValuesChange = {setCreateValues}
+                                                  savedValues = {savedValues}
+                                                  onsavedValuesChange = {setValues}/>} />
             <Route path="/create/2" element={<CreatePageTwo
                                                   navType = {navType} 
                                                   onNavTypeChange = {setNavType}

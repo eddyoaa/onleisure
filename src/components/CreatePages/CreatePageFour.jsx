@@ -102,7 +102,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                                         />
                             <label htmlFor="location_Inside">Drinnen</label>
                         </div>
-                        <div className="toggle_draussen">
+                        <div className="toggle_draussen2">
                                         <Switch
                                         size="large"
                                         className="toggle-switch2" 
