@@ -212,9 +212,9 @@ color: #000000;
 .InfoAbfrage{
     position: absolute;
     width: 360px;
-    height: 300px;
+    height: 400px;
     left: 15px;
-    top: 336px;
+    margin-top: 13vh;
 }
 
 .BeschreibungEingabefeld{
