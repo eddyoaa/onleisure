@@ -27,8 +27,8 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
 
             <Formik
             initialValues={{ 
-                adress: createValues.adress,
-                city: createValues.city,
+                adress: createValues.adress || "",
+                city: createValues.city || "",
                 datetime: createValues.datetime
             }}
 

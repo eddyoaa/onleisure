@@ -22,8 +22,8 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
             <Formik
             initialValues={{ 
                 age: [],
-                age1: createValues.age[0],
-                age2: createValues.age.at(-1),
+                age1: "",
+                age2: "",
                 location_Outside: createValues.location_Outside,
                 location_Inside: createValues.location_Inside,
                 activity: createValues.activity
