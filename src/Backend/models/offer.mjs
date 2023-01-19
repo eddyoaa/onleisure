@@ -16,8 +16,9 @@ const offerSchema = new Schema({
         required: true
     },
    
-     image:  {  type: String,
-         required: false
+     image:  {  data: Buffer,
+                contentType: String,
+                required: false
     },
 
     adress:  {  type: String,

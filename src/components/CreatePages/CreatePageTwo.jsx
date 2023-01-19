@@ -12,7 +12,7 @@ import { Description } from "@mui/icons-material";
 const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange, savedValues, onsavedValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
 
-  
+  console.log("hierrr"+createValues);
 
     useEffect(() => {
         onNavTypeChange("createPage");
