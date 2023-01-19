@@ -6,9 +6,8 @@ import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import * as Yup from 'yup';
 import React from "react";
-import { LocalizationProvider, DateTimePicker} from "@mui/x-date-pickers";
+import { LocalizationProvider} from "@mui/x-date-pickers";
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import {TextField} from '@mui/material';
 import DatePickerField from "./DatePickerField";
 
 const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
@@ -19,14 +18,18 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
         onNavTypeChange("createPage");
         onProgressValueChange(40);
       });
+
       return ( 
         <div className="createPages">
             {toValueCreate && <Navigate to="/create/4"/>}
+
             <LocalizationProvider dateAdapter={AdapterDateFns}>
+
             <Formik
             initialValues={{ 
                 adress: createValues.adress,
-                city: createValues.city 
+                city: createValues.city,
+                datetime: ""
             }}
 
             validationSchema={Yup.object({
@@ -37,13 +40,14 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
                 city: Yup.string()
                 .max(15, 'Der Stadtname ist zu lang!')
                 .required('Bitte angeben'),
+                datetime:""
                 })}
 
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(false);
-                    
-                    console.log("Create Values:" + JSON.stringify(values));
-                    onCreateValuesChange(JSON.stringify(values));
+                    console.log("Create Values:" + values);
+                    const combinedValues = {...createValues, ...values};
+                    onCreateValuesChange(JSON.stringify(combinedValues));
                     setToValueCreate(true);
                     }}
             >

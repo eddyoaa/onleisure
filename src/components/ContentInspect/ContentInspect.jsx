@@ -39,7 +39,7 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
                     <p>{data.title}</p>
                 </div>
                 <div className="info-contentInspect">
-                    <p>{datumUmwandler(data.date) + " - " + data.time + "Uhr"}</p>
+                    <p>{datumUmwandler(data.date) + " - " + data.time + " Uhr"}</p>
                     <p>{data.adress}</p>
                     
                 </div>

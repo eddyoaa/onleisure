@@ -1,15 +1,12 @@
 import "./CreatePages.css"
 import Button from "../Button/Button";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { LinearProgress } from '@mui/material';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import * as Yup from 'yup';
-import { Description } from "@mui/icons-material";
 
-const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange, savedValues, onsavedValuesChange}) => {
+const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
 
   
@@ -40,11 +37,9 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
 
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(false);
-                    
                     console.log("Create Values:" + JSON.stringify(values));
-
-                    console.log(savedValues)
-                    onCreateValuesChange(JSON.stringify(values));
+                    const combinedValues = {...createValues, ...values};
+                    onCreateValuesChange(JSON.stringify(combinedValues));
                     setToValueCreate(true);
                     }}
             >
@@ -87,10 +82,3 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
      );}
  
 export default CreatePageTwo;
-
-{/* <Link to="/create/3" style={{color: "black"}}>
-        <div className="button" id="create">
-            <Button version="duenn" isDisabled={false}>Weiter</Button>
-        </div>
-        </Link>
-        </div> */}

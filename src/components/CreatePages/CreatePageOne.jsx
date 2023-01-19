@@ -2,7 +2,6 @@ import "./CreatePages.css"
 import Button from "../Button/Button";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { LinearProgress } from '@mui/material';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 
 const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValueChange}) => {

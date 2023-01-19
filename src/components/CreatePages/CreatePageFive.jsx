@@ -9,7 +9,8 @@ import * as Yup from 'yup';
 
 const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
-    
+    console.log(JSON.stringify(createValues));
+
     useEffect(() => {
         onNavTypeChange("createPage");
         onProgressValueChange(80);
@@ -33,8 +34,8 @@ const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValu
                     setSubmitting(false);
                     
                     console.log("Create Values:" + JSON.stringify(values));
-                    onCreateValuesChange(JSON.stringify(values));
-                      
+                    const combinedValues = {...createValues, ...values};
+                    onCreateValuesChange(combinedValues);
                     setToValueCreate(true);
                     }}
             >

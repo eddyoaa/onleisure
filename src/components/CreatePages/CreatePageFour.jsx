@@ -1,22 +1,15 @@
 import "./CreatePages.css"
 import Button from "../Button/Button";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { LinearProgress } from '@mui/material';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
-import { create, all } from "mathjs";
 import * as Yup from 'yup';
 import { Switch } from '@mui/material';
-import { Description } from "@mui/icons-material";
-
-const Math = create(all)
-
-
 
 const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
+    console.log(createValues);
     
     useEffect(() => {
         onNavTypeChange("createPage");
@@ -33,8 +26,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                 age2: createValues.age2,
                 location_Outside: createValues.location_Outside,
                 location_Inside: createValues.location_Inside,
-                activity: createValues.activity,
-                time: createValues.time
+                activity: createValues.activity
             }}
     
             validationSchema={Yup.object({
@@ -58,7 +50,8 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                     delete values['age1'];
                     delete values['age2'];
                     console.log("Create Values:" + JSON.stringify(values));
-                    onCreateValuesChange(JSON.stringify(values));
+                    const combinedValues = {...createValues, ...values};
+                    onCreateValuesChange(combinedValues);
                     setToValueCreate(true);
                     }}
             >
