@@ -42,7 +42,7 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
                     setSubmitting(false);
                     
                     console.log("Create Values:" + JSON.stringify(values));
-                    onsavedValuesChange(savedValues.push(values));
+
                     console.log(savedValues)
                     onCreateValuesChange(JSON.stringify(values));
                     setToValueCreate(true);
@@ -70,15 +70,15 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
                     </div>
 
                     <div className="InfoAbfrage">
-                       
                         <Field className="BeschreibungEingabefeld" name="description" type="text" placeholder="Gib eine Beschreibung ein..." />
                         <ErrorMessage name="description" />
                     </div>
+                </div>
 
-                <div className="buttonCreate">
+                <div className="buttonCreate2">
                 <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
-                </div>
+                
             </Form>
         </div>
         )}
