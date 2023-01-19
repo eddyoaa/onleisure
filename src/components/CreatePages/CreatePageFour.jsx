@@ -131,7 +131,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
 
                 
 
-                <div className="buttonCreate">
+                <div className="buttonCreate4">
                     <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
                 </div>
