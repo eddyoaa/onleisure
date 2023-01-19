@@ -9,10 +9,11 @@ import { useState } from "react";
 import * as Yup from 'yup';
 import { Description } from "@mui/icons-material";
 
-const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
+const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange, savedValues, onsavedValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
 
-    
+  
+
     useEffect(() => {
         onNavTypeChange("createPage");
         onProgressValueChange(20);
@@ -41,6 +42,8 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
                     setSubmitting(false);
                     
                     console.log("Create Values:" + JSON.stringify(values));
+
+                    console.log(savedValues)
                     onCreateValuesChange(JSON.stringify(values));
                     setToValueCreate(true);
                     }}
@@ -67,15 +70,15 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
                     </div>
 
                     <div className="InfoAbfrage">
-                       
                         <Field className="BeschreibungEingabefeld" name="description" type="text" placeholder="Gib eine Beschreibung ein..." />
                         <ErrorMessage name="description" />
                     </div>
+                </div>
 
-                <div className="buttonCreate">
+                <div className="buttonCreate2">
                 <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
-                </div>
+                
             </Form>
         </div>
         )}

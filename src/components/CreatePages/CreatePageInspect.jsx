@@ -65,7 +65,7 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues}) => {
             </div>
         <Link to="/create/finish" style={{color: "black"}}>
         <div className="button" id="create">
-            <Button version="duenn" isDisabled={false}>Posten</Button>
+            <Button version="dick" isDisabled={false}>Posten</Button>
         </div>
         </Link>
         </div>

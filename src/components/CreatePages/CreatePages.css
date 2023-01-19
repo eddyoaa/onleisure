@@ -28,8 +28,12 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 15px;
 }
 
-.buttonCreate{
+.buttonCreate1{
     margin-top: 60vh;
+}
+
+.buttonCreate2{
+    margin-top: 20vh;
 }
 
 .buttonCreate3{
@@ -106,8 +110,10 @@ border-radius: 15px;
 }
 
 .AlterAbfragen{
-
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 360px;
     height: 56.33px;
     left: 15px;
@@ -210,21 +216,18 @@ color: #000000;
 }
 
 .InfoAbfrage{
-    position: absolute;
     width: 360px;
-    height: 300px;
+    height: 200px;
     left: 15px;
-    top: 336px;
+    margin-top: 10px;
+    top: 25vh;
 }
 
 .BeschreibungEingabefeld{
-box-sizing: border-box;
+box-sizing: flex;
 
-position: absolute;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0%;
+width: 100%;
+height: 100%;
 
 /* Mittel grau */
 
@@ -234,11 +237,10 @@ border-radius: 14px;
 
 .TitelAbfragen{
 
-    position: absolute;
     width: 360px;
     height: 56px;
     left: 15px;
-    top: 250px;
+    top: 25vh;
 
 
 }
@@ -258,6 +260,7 @@ border-radius: 14px;
     top: 0svh;
     text-align: top;
 
+   top: 100px;
 }
 
 .ortAbfrage2{
@@ -269,6 +272,23 @@ border-radius: 14px;
 
 .toggle-switch2{
     color: green;
+}
+
+.toggle_drinnen{
+    position: relative;
+    left: -90px;
+    margin-top: 6vh;
+}
+
+.toggle_draussen{
+    position: relative;
+    left: -90px;
+    margin-top: 15px;
+}
+
+.buttondone{
+    position: relative;
+    top: 60vh;
 }
 
 .datetimepicker{
