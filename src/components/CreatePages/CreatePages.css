@@ -241,6 +241,13 @@ border-radius: 14px;
 
 }
 
+.abfragen{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height:100px;
+}
+
 .ZeitEingabefeld{
 
     box-sizing: border-box;
