@@ -106,8 +106,10 @@ border-radius: 15px;
 }
 
 .AlterAbfragen{
-
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 360px;
     height: 56.33px;
     left: 15px;
@@ -210,21 +212,18 @@ color: #000000;
 }
 
 .InfoAbfrage{
-    position: absolute;
     width: 360px;
-    height: 400px;
+    height: 200px;
     left: 15px;
+    margin-top: 10px;
     top: 25vh;
 }
 
 .BeschreibungEingabefeld{
-box-sizing: border-box;
+box-sizing: flex;
 
-position: absolute;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0%;
+width: 100%;
+height: 100%;
 
 /* Mittel grau */
 
@@ -234,7 +233,6 @@ border-radius: 14px;
 
 .TitelAbfragen{
 
-    position: absolute;
     width: 360px;
     height: 56px;
     left: 15px;
