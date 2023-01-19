@@ -60,7 +60,7 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
         <div className="form">
             <Form>
                 <div className="abfragen">
-                    <h3 className="text-one">Titel</h3>
+                    <h3 className="text-one">Wann und wo?</h3>
 
                     <div className="AdresseAbfragen">
                         
@@ -84,6 +84,11 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
                       onChange={date => setFieldValue('startDate', date)}
                     />
                    
+                    </div>
+
+                    <div className="ZeitAbfragen">
+                    <Field className="standortEingabefeld" name="time" type="text" placeholder="z.B 18:00 - 20:00" />
+                        <ErrorMessage name="time" />
                     </div>
 
                 <div className="button">

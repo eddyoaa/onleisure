@@ -32,7 +32,8 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                 age2: createValues.age2,
                 location_Outside: createValues.location_Outside,
                 location_Inside: createValues.location_Inside,
-                activity: createValues.activity 
+                activity: createValues.activity,
+                time: createValues.time
             }}
     
             validationSchema={Yup.object({
@@ -96,6 +97,9 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                                 <option>Tupperparty</option>
                             </Field>
                     </div>
+
+                
+
                 <div className="button">
                     <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
