@@ -270,3 +270,16 @@ border-radius: 14px;
 .toggle-switch2{
     color: green;
 }
+
+.toggle_drinnen{
+    position: relative;
+    left: -90px;
+    margin-top: 6vh;
+}
+
+.toggle_draussen{
+    position: relative;
+    left: -90px;
+    margin-top: 15px;
+}
+
