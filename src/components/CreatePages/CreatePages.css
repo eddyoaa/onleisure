@@ -11,7 +11,7 @@
     background: #C8C8C8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-    }
+}
 
 
 .image-frame{
@@ -29,9 +29,11 @@ border-radius: 15px;
 }
 
 .buttonCreate{
-    margin-top: 0px;
+    margin-top: 60vh;
+}
 
-    bottom: 100px;
+.buttonCreate3{
+    margin-top: 20vh;
 }
 
 .text-one{
@@ -251,9 +253,12 @@ border-radius: 14px;
     border-radius: 14px;
 }
 
-.button-create4{
+.BeschreibungEingabefeld{
 
-   margin-top: 300px;
+    top: 0svh;
+    text-align: top;
+
+   top: 100px;
 }
 
 .ortAbfrage2{

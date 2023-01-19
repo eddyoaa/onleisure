@@ -65,7 +65,7 @@ const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValu
                         <ErrorMessage name="eMail" />
                     </div>
     
-                <div className="button">
+                <div className="buttonCreate">
                 <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
                 </div>
