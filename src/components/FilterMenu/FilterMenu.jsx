@@ -49,7 +49,7 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
         }) => (
         <div className="form">
             <Form>
-                <div className="abfragen">
+                <div className="abfragenfilter">
                     <div className="standortAbfrageFilter">
                         <label htmlFor="city">Standort</label>
                         <Field className="standortEingabefeld" name="city" type="text" placeholder="Gib deine Stadt ein..."/>

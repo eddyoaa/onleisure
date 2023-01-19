@@ -1,15 +1,12 @@
 import "./CreatePages.css"
 import Button from "../Button/Button";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { LinearProgress } from '@mui/material';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import * as Yup from 'yup';
-import { Description } from "@mui/icons-material";
 
-const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange, savedValues, onsavedValuesChange}) => {
+const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
 
   console.log("hierrr"+createValues);
@@ -40,11 +37,9 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
 
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(false);
-                    
                     console.log("Create Values:" + JSON.stringify(values));
-                    onsavedValuesChange(savedValues.push(values));
-                    console.log(savedValues)
-                    onCreateValuesChange(JSON.stringify(values));
+                    const combinedValues = {...createValues, ...values};
+                    onCreateValuesChange(combinedValues);
                     setToValueCreate(true);
                     }}
             >
@@ -64,21 +59,22 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
                     <h3 className="text-one">Füge eine Beschreibung hinzu</h3>
 
                     <div className="TitelAbfragen">
-                        
+                    <label htmlFor="titelLabel">Titel</label>
                         <Field className="standortEingabefeld" name="title" type="text" placeholder="Gib einen Titel ein..." />
                         <ErrorMessage name="title" />
                     </div>
 
                     <div className="InfoAbfrage">
-                       
+                    <label htmlFor="beschreibungLabel">Beschreibung</label>
                         <Field className="BeschreibungEingabefeld" name="description" type="text" placeholder="Gib eine Beschreibung ein..." />
                         <ErrorMessage name="description" />
                     </div>
+                </div>
 
-                <div className="buttonCreate">
+                <div className="buttonCreate2">
                 <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
-                </div>
+                
             </Form>
         </div>
         )}
@@ -87,10 +83,3 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
      );}
  
 export default CreatePageTwo;
-
-{/* <Link to="/create/3" style={{color: "black"}}>
-        <div className="button" id="create">
-            <Button version="duenn" isDisabled={false}>Weiter</Button>
-        </div>
-        </Link>
-        </div> */}

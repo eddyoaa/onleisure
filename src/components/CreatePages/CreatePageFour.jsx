@@ -1,22 +1,15 @@
 import "./CreatePages.css"
 import Button from "../Button/Button";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { LinearProgress } from '@mui/material';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
-import { create, all } from "mathjs";
 import * as Yup from 'yup';
 import { Switch } from '@mui/material';
-import { Description } from "@mui/icons-material";
-
-const Math = create(all)
-
-
 
 const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
+    console.log(createValues);
     
     useEffect(() => {
         onNavTypeChange("createPage");
@@ -29,12 +22,11 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
             <Formik
             initialValues={{ 
                 age: [],
-                age1: createValues.age1,
-                age2: createValues.age2,
+                age1: createValues.age[0],
+                age2: createValues.age.at(-1),
                 location_Outside: createValues.location_Outside,
                 location_Inside: createValues.location_Inside,
-                activity: createValues.activity,
-                time: createValues.time
+                activity: createValues.activity
             }}
     
             validationSchema={Yup.object({
@@ -58,7 +50,8 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                     delete values['age1'];
                     delete values['age2'];
                     console.log("Create Values:" + JSON.stringify(values));
-                    onCreateValuesChange(JSON.stringify(values));
+                    const combinedValues = {...createValues, ...values};
+                    onCreateValuesChange(combinedValues);
                     setToValueCreate(true);
                     }}
             >
@@ -74,16 +67,16 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
         }) => (
         <div className="form">
             <Form>
-                <div className="abfragen">
+                <div className="abfragen" id="createPageOne">
                     <h3 className="text-one">Gib mehr Details an</h3>
                     <h3 className="labelAlter">Alter</h3>
                     <div className="AlterAbfragen">
                         
-                        <Field className="alter1Eingabefeld" name="age1" type="text" placeholder="Von..." />
+                        <Field className="alter1Eingabefeld" name="age1" type="number" placeholder="Von..." />
                         <ErrorMessage name="title" />
                   
                        
-                        <Field className="alter2Eingabefeld" name="age2" type="text" placeholder="Bis..." />
+                        <Field className="alter2Eingabefeld" name="age2" type="number" placeholder="Bis..." />
                         <ErrorMessage name="description" />
                     </div>
 
@@ -131,7 +124,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
 
                 
 
-                <div className="buttonCreate">
+                <div className="buttonCreate4">
                     <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
                 </div>

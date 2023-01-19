@@ -28,17 +28,27 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 15px;
 }
 
-.buttonCreate{
+.buttonCreate1{
     margin-top: 60vh;
+}
+
+.buttonCreate2{
+    margin-top: 20vh;
 }
 
 .buttonCreate3{
     margin-top: 20vh;
 }
 
+.buttonCreate4{
+    margin-top: 20vh;
+}
+
 .text-one{
-    margin-top: 50px;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
     text-align: center;
+    font-size: 28px;
 }
 
 
@@ -106,8 +116,8 @@ border-radius: 15px;
 }
 
 .AlterAbfragen{
-
-    position: absolute;
+    display: flex;
+    justify-content: space-between;
     width: 360px;
     height: 56.33px;
     left: 15px;
@@ -117,30 +127,22 @@ border-radius: 15px;
 
 .alter1Eingabefeld{
 
-    box-sizing: border-box;
+    text-align: center;
+    width: 40%;
+    font-size: 24px;
 
-position: absolute;
-left: 0%;
-right: 58.33%;
-top: 0%;
-bottom: 0.59%;
+    /* Mittel grau */
 
-/* Mittel grau */
-
-border: 2px solid #787878;
-border-radius: 14px;
+    border: 2px solid #787878;
+    border-radius: 14px;
 
 }
 
 .alter2Eingabefeld{
 
-    box-sizing: border-box;
-
-    position: absolute;
-    left: 58.33%;
-    right: 0%;
-    top: 0.59%;
-    bottom: 0%;
+    text-align: center;
+    width: 40%;
+    font-size: 24px;
     
     /* Mittel grau */
     
@@ -148,6 +150,7 @@ border-radius: 14px;
     border-radius: 14px;
 
 }
+
 
 .kategorieEingabefeld{
     position: absolute;
@@ -210,21 +213,18 @@ color: #000000;
 }
 
 .InfoAbfrage{
-    position: absolute;
     width: 360px;
-    height: 300px;
+    height: 200px;
     left: 15px;
-    top: 336px;
+    margin-top: 10px;
+    top: 25vh;
 }
 
 .BeschreibungEingabefeld{
-box-sizing: border-box;
+box-sizing: flex;
 
-position: absolute;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0%;
+width: 100%;
+height: 100%;
 
 /* Mittel grau */
 
@@ -233,14 +233,19 @@ border-radius: 14px;
 }
 
 .TitelAbfragen{
-
-    position: absolute;
     width: 360px;
     height: 56px;
     left: 15px;
-    top: 250px;
+    top: 25vh;
 
 
+}
+
+.abfragen{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height:100px;
 }
 
 .ZeitEingabefeld{
@@ -274,8 +279,7 @@ border-radius: 14px;
 
 .toggle_drinnen{
     position: relative;
-    left: -90px;
-    margin-top: 6vh;
+    margin-top: 2vh;
 }
 
 .toggle_draussen{
@@ -284,7 +288,28 @@ border-radius: 14px;
     margin-top: 15px;
 }
 
-.button-create4{
+.buttondone{
+    position: relative;
+    top: 60vh;
+}
 
-    margin-top: 300px;
- }
+.datetimepicker{
+    width: 360px;
+    height: 56px;
+    padding-left: 10px;
+
+    box-sizing: border-box;
+    border: 2px solid #787878;
+    border-radius: 14px;
+
+    text-align: left;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #787878;
+}
+
+.button-wrapper{
+    height:50px;
+    width: 100%;
+}

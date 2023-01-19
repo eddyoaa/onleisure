@@ -9,7 +9,8 @@ import * as Yup from 'yup';
 
 const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
-    
+    console.log(JSON.stringify(createValues));
+
     useEffect(() => {
         onNavTypeChange("createPage");
         onProgressValueChange(80);
@@ -21,7 +22,7 @@ const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValu
             <Formik
             initialValues={{ 
                 telefon: createValues.telefon,
-                eMail: createValues.email 
+                eMail: createValues.eMail 
             }}
     
             validationSchema={Yup.object({
@@ -33,8 +34,8 @@ const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValu
                     setSubmitting(false);
                     
                     console.log("Create Values:" + JSON.stringify(values));
-                    onCreateValuesChange(JSON.stringify(values));
-                      
+                    const combinedValues = {...createValues, ...values};
+                    onCreateValuesChange(combinedValues);
                     setToValueCreate(true);
                     }}
             >
@@ -54,13 +55,13 @@ const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValu
                     <h3 className="text-one">Kontaktdetails</h3>
     
                     <div className="TitelAbfragen">
-                        
+                    <label htmlFor="location_Outside">Telefon</label>
                         <Field className="standortEingabefeld" name="telefon" type="text" placeholder="Gib eine Telefonnummer ein..." />
                         <ErrorMessage name="telefon" />
                     </div>
     
                     <div className="InfoAbfrage">
-                       
+                    <label htmlFor="location_Outside">E-Mail</label>
                         <Field className="standortEingabefeld" name="eMail" type="text" placeholder="Gib eine e-Mail Adresse ein..." />
                         <ErrorMessage name="eMail" />
                     </div>

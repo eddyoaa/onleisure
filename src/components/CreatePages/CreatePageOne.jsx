@@ -2,7 +2,6 @@ import "./CreatePages.css"
 import Button from "../Button/Button";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { LinearProgress } from '@mui/material';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import {useState} from 'react';
 import React from "react";
@@ -56,8 +55,8 @@ const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValue
                     </div>
             </div>
             <Link to="/create/2" style={{color: "black"}}>
-                <div className="buttonCreate" id="create">
-                    <Button onSubmit={onSubmit} version="dick" isDisabled={false}>Weiter</Button>
+                <div className="buttonCreate1" id="create">
+                    <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
             </Link>
         </div>

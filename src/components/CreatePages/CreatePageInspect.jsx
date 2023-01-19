@@ -2,7 +2,7 @@ import "./CreatePages.css"
 import "../ContentInspect/ContentInspect.css"
 import Button from "../Button/Button";
 import { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 
@@ -21,9 +21,20 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues}) => {
     telefon: '123456789',
     activity: 'Fußball'};
 
+    //const data = createValues;
+
     useEffect(() => {
         onNavTypeChange("cardInspectPage");
       });
+
+      let ageFormated;
+
+      if(data.age.length===1){
+          ageFormated = data.age[0] + " J";
+      }
+      else {
+          ageFormated = data.age[0] + "-" + data.age.at(-1) + " J";
+      }
 
     function datumUmwandler(date){
         const info = date.split("-");
@@ -42,13 +53,13 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues}) => {
                     <p>{data.title}</p>
                 </div>
                 <div className="info-contentInspect">
-                    <p>{datumUmwandler(data.date) + " - " + data.time + "Uhr"}</p>
+                    <p>{datumUmwandler(data.date) + " - " + data.time + " Uhr"}</p>
                     <p>{data.adress}</p>
                     
                 </div>
                 <div className="kategorienLeiste">
                     <p className="kategorie">{data.activity}</p>
-                    <p className="kategorie">{data.age[0] + "-" + data.age.at(-1) + " J"}</p>
+                    <p className="kategorie">{ageFormated}</p>
                     {(data.location_Outside) && <p className="kategorie">Outdoor</p>}
                     {(data.location_Inside) && <p className="kategorie">Indoor</p>}
                 </div>
@@ -65,7 +76,7 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues}) => {
             </div>
         <Link to="/create/finish" style={{color: "black"}}>
         <div className="button" id="create">
-            <Button version="duenn" isDisabled={false}>Posten</Button>
+            <Button version="dick" isDisabled={false}>Posten</Button>
         </div>
         </Link>
         </div>
