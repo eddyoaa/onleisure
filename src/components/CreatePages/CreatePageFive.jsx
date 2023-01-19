@@ -22,7 +22,7 @@ const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValu
             <Formik
             initialValues={{ 
                 telefon: createValues.telefon,
-                eMail: createValues.email 
+                eMail: createValues.eMail 
             }}
     
             validationSchema={Yup.object({
@@ -55,13 +55,13 @@ const CreatePageFive = ({navType, onNavTypeChange, progressValue, onProgressValu
                     <h3 className="text-one">Kontaktdetails</h3>
     
                     <div className="TitelAbfragen">
-                        
+                    <label htmlFor="location_Outside">Telefon</label>
                         <Field className="standortEingabefeld" name="telefon" type="text" placeholder="Gib eine Telefonnummer ein..." />
                         <ErrorMessage name="telefon" />
                     </div>
     
                     <div className="InfoAbfrage">
-                       
+                    <label htmlFor="location_Outside">E-Mail</label>
                         <Field className="standortEingabefeld" name="eMail" type="text" placeholder="Gib eine e-Mail Adresse ein..." />
                         <ErrorMessage name="eMail" />
                     </div>

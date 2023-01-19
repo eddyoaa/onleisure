@@ -22,8 +22,8 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
             <Formik
             initialValues={{ 
                 age: [],
-                age1: createValues.age1,
-                age2: createValues.age2,
+                age1: createValues.age[0],
+                age2: createValues.age.at(-1),
                 location_Outside: createValues.location_Outside,
                 location_Inside: createValues.location_Inside,
                 activity: createValues.activity
@@ -72,11 +72,11 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                     <h3 className="labelAlter">Alter</h3>
                     <div className="AlterAbfragen">
                         
-                        <Field className="alter1Eingabefeld" name="age1" type="text" placeholder="Von..." />
+                        <Field className="alter1Eingabefeld" name="age1" type="number" placeholder="Von..." />
                         <ErrorMessage name="title" />
                   
                        
-                        <Field className="alter2Eingabefeld" name="age2" type="text" placeholder="Bis..." />
+                        <Field className="alter2Eingabefeld" name="age2" type="number" placeholder="Bis..." />
                         <ErrorMessage name="description" />
                     </div>
 

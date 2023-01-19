@@ -39,7 +39,7 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
                     setSubmitting(false);
                     console.log("Create Values:" + JSON.stringify(values));
                     const combinedValues = {...createValues, ...values};
-                    onCreateValuesChange(JSON.stringify(combinedValues));
+                    onCreateValuesChange(combinedValues);
                     setToValueCreate(true);
                     }}
             >
@@ -59,12 +59,13 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
                     <h3 className="text-one">Füge eine Beschreibung hinzu</h3>
 
                     <div className="TitelAbfragen">
-                        
+                    <label htmlFor="titelLabel">Titel</label>
                         <Field className="standortEingabefeld" name="title" type="text" placeholder="Gib einen Titel ein..." />
                         <ErrorMessage name="title" />
                     </div>
 
                     <div className="InfoAbfrage">
+                    <label htmlFor="beschreibungLabel">Beschreibung</label>
                         <Field className="BeschreibungEingabefeld" name="description" type="text" placeholder="Gib eine Beschreibung ein..." />
                         <ErrorMessage name="description" />
                     </div>

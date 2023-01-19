@@ -29,7 +29,7 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
             initialValues={{ 
                 adress: createValues.adress,
                 city: createValues.city,
-                datetime: ""
+                datetime: createValues.datetime
             }}
 
             validationSchema={Yup.object({
@@ -47,7 +47,7 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
                     setSubmitting(false);
                     console.log("Create Values:" + values);
                     const combinedValues = {...createValues, ...values};
-                    onCreateValuesChange(JSON.stringify(combinedValues));
+                    onCreateValuesChange(combinedValues);
                     setToValueCreate(true);
                     }}
             >
@@ -67,13 +67,13 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
                     <h3 className="text-one">Wann und wo?</h3>
 
                     <div className="AdresseAbfragen">
-                        
+                    <label htmlFor="labelAdresse">Adresse</label>
                         <Field className="standortEingabefeld" name="adress" type="text" placeholder="Gib eine Adresse ein..." />
                         <ErrorMessage name="adress" />
                     </div>
 
                     <div className="StadtAbfragen">
-                        
+                    <label htmlFor="labelStadt">Stadt</label>
                         <Field className="standortEingabefeld" name="city" type="text" placeholder="Gib eine Stadt ein..." />
                         <ErrorMessage name="city" />
                     </div>
