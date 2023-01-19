@@ -284,3 +284,7 @@ border-radius: 14px;
     margin-top: 15px;
 }
 
+.buttondone{
+    position: relative;
+    top: 60vh;
+}
