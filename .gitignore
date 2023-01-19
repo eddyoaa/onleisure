@@ -39,6 +39,8 @@ org.eclipse.core.resources.prefs
 .env.test.local
 .env.production.local
 
+.\src\Backend\.env
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
