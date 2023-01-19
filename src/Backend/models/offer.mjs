@@ -29,7 +29,7 @@ const offerSchema = new Schema({
             required: true
         },
            
-    date :    {  type: String,
+    date:    {  type: String,
             required: true,
             validate: {
                 validator: date => validator.isDate(date),

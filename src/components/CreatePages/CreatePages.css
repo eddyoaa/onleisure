@@ -1,14 +1,54 @@
 .Image-Box{
+    position: absolute;
+    width: 360px;
+    height: 250px;
+    left: 15px;
+    top: 250px;
+    text-align: center;
+    vertical-align: middle;
+    
+    
+    background: #C8C8C8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+
+.image-frame{
 position: absolute;
 width: 360px;
 height: 250px;
 left: 15px;
 top: 250px;
 
+
+
 background: #C8C8C8;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 15px;
 }
+
+.buttonCreate{
+    margin-top: 60vh;
+}
+
+.buttonCreate3{
+    margin-top: 20vh;
+}
+
+.text-one{
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+.icon-image{
+    margin-top: 70px;
+    text-align: center;
+    color: #323232;
+}
+
+
 
 .createPages{
     display: flex;
@@ -63,4 +103,170 @@ border-radius: 15px;
     background-color: white;
     height: 100px;
     z-index: 99;
+}
+
+.AlterAbfragen{
+
+    position: absolute;
+    width: 360px;
+    height: 56.33px;
+    left: 15px;
+    top: 240px;
+
+}
+
+.alter1Eingabefeld{
+
+    box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 58.33%;
+top: 0%;
+bottom: 0.59%;
+
+/* Mittel grau */
+
+border: 2px solid #787878;
+border-radius: 14px;
+
+}
+
+.alter2Eingabefeld{
+
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 58.33%;
+    right: 0%;
+    top: 0.59%;
+    bottom: 0%;
+    
+    /* Mittel grau */
+    
+    border: 2px solid #787878;
+    border-radius: 14px;
+
+}
+
+.kategorieEingabefeld{
+    position: absolute;
+    width: 360px;
+    height: 56px;
+    left: 15px;
+    top: 569px;
+}
+
+
+
+.labelAlter{
+
+    position: absolute;
+    width: 59px;
+    height: 30px;
+    left: 15px;
+    top: 180px;
+    
+
+    font-size: 20px;
+    line-height: 30px;
+    
+    color: #000000;
+}
+
+
+.labelOrt{
+
+    position: absolute;
+width: 59px;
+height: 30px;
+left: 15px;
+top: 250px;
+
+
+font-size: 25px;
+line-height: 30px;
+
+color: #000000;
+}
+
+
+.labelAktiv{
+
+    position: absolute;
+    width: 103px;
+    height: 30px;
+    left: 15px;
+    top: 500px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    
+    color: #000000;
+    
+}
+
+.InfoAbfrage{
+    position: absolute;
+    width: 360px;
+    height: 300px;
+    left: 15px;
+    top: 336px;
+}
+
+.BeschreibungEingabefeld{
+box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+/* Mittel grau */
+
+border: 2px solid #787878;
+border-radius: 14px;
+}
+
+.TitelAbfragen{
+
+    position: absolute;
+    width: 360px;
+    height: 56px;
+    left: 15px;
+    top: 250px;
+
+
+}
+
+.ZeitEingabefeld{
+
+    box-sizing: border-box;
+    
+    /* Mittel grau */
+    
+    border: 2px solid #787878;
+    border-radius: 14px;
+}
+
+.BeschreibungEingabefeld{
+
+    top: 0svh;
+    text-align: top;
+
+}
+
+.ortAbfrage2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.toggle-switch2{
+    color: green;
 }

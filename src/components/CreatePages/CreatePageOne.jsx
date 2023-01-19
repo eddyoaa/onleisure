@@ -3,6 +3,7 @@ import Button from "../Button/Button";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LinearProgress } from '@mui/material';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 
 const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValueChange}) => {
 
@@ -14,12 +15,23 @@ const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValue
 
     return ( 
         <div className="createPages">
-  
-        <Link to="/create/2" style={{color: "black"}}>
-        <div className="button" id="create">
-            <Button version="duenn" isDisabled={false}>Weiter</Button>
-        </div>
-        </Link>
+            
+            <h3 className="text-one">
+                Lade hier deine Fotos hoch
+            </h3>
+
+            <div className="image-frame">
+                    <div className="icon-image">
+                    <AddPhotoAlternateIcon 
+                        sx={{ fontSize: 92}} 
+                        /*onClick={() => {navigate(-1)}}*//>
+                    </div>
+            </div>
+            <Link to="/create/2" style={{color: "black"}}>
+                <div className="buttonCreate" id="create">
+                    <Button version="dick" isDisabled={false}>Weiter</Button>
+                </div>
+            </Link>
         </div>
      );}
  

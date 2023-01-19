@@ -26,7 +26,7 @@ const StartPageOne = ({navType, onNavTypeChange}) => {
             </h1>
         </div>
         <Link to="/standort" style={{color: "black"}}>
-        <div className="button">
+        <div className="buttonStart">
             <Button version="dick" isDisabled={false}>Starten</Button>
         </div>
         </Link>
