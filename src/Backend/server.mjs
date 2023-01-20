@@ -40,7 +40,7 @@ const connectToDB = () => {
 connectToDB()
 app.use(express.json());
 
-app.all('/*', function(req, res, next) {
+app.use('/*', function(req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS, POST, PUT, DELETE")
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, Origin, Content-Type, Accept, Authorization");
