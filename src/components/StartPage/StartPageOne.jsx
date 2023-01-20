@@ -8,10 +8,10 @@ import morphAnimation from "../../lottiefiles/morphing animation.json"
 const StartPageOne = ({navType, onNavTypeChange}) => {
 
     
-    useEffect(() => {
-        if(navType!=="startPage"){
-        onNavTypeChange("startPageOne");}
-      });
+    // useEffect(() => {
+    //     if(navType!=="startPage"){
+    //     onNavTypeChange("startPageOne");}
+    //   });
 
     return ( 
         <div className="startPage">
