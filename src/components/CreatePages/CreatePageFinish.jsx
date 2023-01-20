@@ -14,7 +14,7 @@ const CreatePageFinish = ({navType, onNavTypeChange, createValues, onCreateValue
       useEffect(()=> {
         console.log("Console: fetch API");
         const fetchPictures = async () => {
-            return( await fetch(`http://localhost:80/create`, {
+            return( await fetch(`https://onleisure.onrender.com/create`, {
                 method: "POST", 
                 headers: {"Content-Type": "application/json"},
                 withCredentials: true,    

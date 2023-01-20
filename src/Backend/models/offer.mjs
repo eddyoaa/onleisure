@@ -59,11 +59,7 @@ const offerSchema = new Schema({
               }},
 
     telefon:  {
-                type: String,
-                validate: {
-                    validator: num => validator.isMobilePhone(num),
-                    message: 'Phonenumber is not valid.'
-                  }
+                type: String
               },
     activity:  {  type: String,
                 required: true },
