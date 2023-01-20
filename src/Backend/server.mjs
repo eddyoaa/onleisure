@@ -26,6 +26,12 @@ app.use(bodyParser.json({
     },
   }));
 
+app.use(bodyParser.json({limit: '150mb'}));
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+limit: '150mb',
+extended: true
+})); 
+
 mongoose.set('strictQuery', true); 
 
 const connectToDB = () => {

@@ -20,7 +20,7 @@ const CreatePageFinish = ({navType, onNavTypeChange, createValues, onCreateValue
                 method: "POST", 
                 withCredentials: true,    
                 crossorigin: true, 
-                body: createValues
+                body: JSON.stringify(createValues)
               })
              
               );
