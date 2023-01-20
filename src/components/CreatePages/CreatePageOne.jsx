@@ -1,27 +1,15 @@
 import "./CreatePages.css"
 import Button from "../Button/Button";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
-import {useState} from 'react';
-import React from "react";
-import FileUpload from "./image.jsx"
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
+import {React, useState ,useEffect} from "react";
+import "./image.css";
+
 
 
 const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
-    const [file, setFile] = useState("");
+    const [image, setImage] = useState("");
     const [toValueCreate, setToValueCreate] = useState(false);
-
-      // State to store uploaded file
-    
-      
-      // Handles file upload event and updates state
-      
-        // Add code here to upload file to server
-        // ...
-      
-   
 
     useEffect(() => {
         onNavTypeChange("createPage");
@@ -29,57 +17,41 @@ const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValue
       
       });
 
-    function onSubmit(){
-        onCreateValuesChange({image: file});
-        setToValueCreate(true);
-    }
+    const onSubmit = () => {
+        console.log("onsubmit");
+        const formData = new FormData();
+        formData.append("image", image)
+        onCreateValuesChange({image:image});
+        setToValueCreate(true);}
 
+    const handleChange = (e) => {
+        console.log(e.target.files);
+        setImage(e.target.files[0]);
+      }
     return ( 
         <div className="createPages">
-                        {toValueCreate && <Navigate to="/create/2"/>}
+        {toValueCreate && <Navigate to="/create/2"/>}
             <h3 className="text-one">
                 Lade hier deine Fotos hoch
             </h3>
 
             <div className="image-frame">
-            <div>
-           <FileUpload
-           file = {file}
-           onFileChange={setFile}/>
-            </div>
+                <div id="upload-box">
+                    <input type="file" onChange={handleChange} />
 
-                    <div className="icon-image">
+                    {image && <div><img className="uploadedpic" src={URL.createObjectURL(image)} alt={image.name}/> </div>}
+                </div>
+
+                <div className="icon-image">
                     <AddPhotoAlternateIcon 
                         sx={{ fontSize: 92}} 
                         /*onClick={() => {navigate(-1)}}*//>
-                    </div>
+                </div>
             </div>
-            <Link to="/create/2" style={{color: "black"}}>
-                <div className="buttonCreate1" id="create">
+                <div className="buttonCreate1" id="create" onClick={onSubmit}>
                     <Button version="dick" isDisabled={false}>Weiter</Button>
                 </div>
-            </Link>
         </div>
-     );}
-    
-
- 
+     );
+    }
 export default CreatePageOne;
-
-
-
-
-
-/**
- * Component to handle file upload. Works for image
- * uploads, but can be edited to work for any file.
- */
-
-
-
-/**
- * Component to display thumbnail of image.
- */
-
-
-

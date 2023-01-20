@@ -24,8 +24,8 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                 age: [],
                 age1: "",
                 age2: "",
-                location_Outside: createValues.location_Outside,
-                location_Inside: createValues.location_Inside,
+                location_Outside: false,
+                location_Inside: false,
                 activity: createValues.activity
             }}
     
@@ -42,16 +42,17 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
     
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(false);
-                    const age = [];
-                    for (let i = parseInt(values.age1); i <= parseInt(values.age2); i++) {
+                    let age = [];
+                    for (let i = values.age1; i <= values.age2; i++) {
                         age.push(i);
                       }
-                    values.age = age;
+                    const ageValue = {age: age.map(String)};
                     delete values['age1'];
                     delete values['age2'];
                     console.log("Create Values:" + JSON.stringify(values));
                     const combinedValues = {...createValues, ...values};
-                    onCreateValuesChange(combinedValues);
+                    const moreCombined={...combinedValues, ...ageValue}
+                    onCreateValuesChange(moreCombined);
                     setToValueCreate(true);
                     }}
             >

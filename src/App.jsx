@@ -110,7 +110,9 @@ const App = (props) => {
                                                   onCreateValuesChange = {setCreateValues}/>} />
             <Route path="/create/finish" element={<CreatePageFinish
                                                   navType = {navType} 
-                                                  onNavTypeChange = {setNavType}/>} />
+                                                  onNavTypeChange = {setNavType}
+                                                  createValues = {createValues}
+                                                  onCreateValuesChange = {setCreateValues}/>} />
           </Routes>
         </div>
       </div>

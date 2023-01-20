@@ -19,6 +19,18 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
         onProgressValueChange(40);
       });
 
+      const datetimeUmwandler = (datetime, createValues) => { 
+        delete createValues.datetime;
+        datetime = JSON.stringify(datetime);
+        const array =  datetime.split("T");
+        const timeArr = array[1].split(":");
+        const newTime= timeArr[0] + ":" + timeArr[1];
+        const newDate = array[0]
+        const newObj = {date: newDate, time: newTime};
+        const combinedValues = {...createValues, ...newObj};
+        console.log("DATA" + combinedValues)
+        return combinedValues;
+    }
       return ( 
         <div className="createPages">
             {toValueCreate && <Navigate to="/create/4"/>}
@@ -47,7 +59,8 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
                     setSubmitting(false);
                     console.log("Create Values:" + values);
                     const combinedValues = {...createValues, ...values};
-                    onCreateValuesChange(combinedValues);
+                    const moreCombined = datetimeUmwandler(combinedValues.datetime, combinedValues);
+                    onCreateValuesChange(moreCombined);
                     setToValueCreate(true);
                     }}
             >

@@ -9,7 +9,9 @@ import * as Yup from 'yup';
 const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
 
-  console.log("hierrr"+createValues);
+  console.log("CreateValues:" + createValues);
+  console.log("CreateValues:" + JSON.stringify(createValues));
+
 
     useEffect(() => {
         onNavTypeChange("createPage");

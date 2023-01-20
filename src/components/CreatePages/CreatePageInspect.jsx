@@ -1,17 +1,22 @@
 import "./CreatePages.css"
 import "../ContentInspect/ContentInspect.css"
 import Button from "../Button/Button";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
+import newImage from "../../yueying-ni-vDPF4aE-Xno-unsplash.jpg"
 
 
-const CreatePageInspect = ({navType, onNavTypeChange, createValues}) => {
-    const data =     {adress: 'Musterstraße 12',
+const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValuesChange}) => {
+    const [toValueCreate, setToValueCreate] = useState(false);
+
+    let data =     {
+    adress: 'Musterstraße 12',
+    image: newImage,
     title: "Titel",
     city: 'München',
-    description: "Lorum und hbahkfbk hbsfkhlblhbf d hbahkfbk hbsfkhlblhbf hbSbf d hbahkfbk hbsfkhlblhbf hbSbf d hbahkfbk hbsfkhlblhbf hbSbf hbSbfshBKB SKdbfKLB flSDBf lBSL so d hbahkfbk hbsfkhlblhbf hbSbf d hbahkfbk hbsfkhlblhbf hbSbf hbSbfshBKB SKdbfKLB flSDBf lBSL so d hbahkfbk hbsfkhlblhbf hbSbf d hbahkfbk hbsfkhlblhbf hbSbf hbSbfshBKB SKdbfKLB flSDBf lBSL so d hbahkfbk hbsfkhlblhbf hbSbf d hbahkfbk hbsfkhlblhbf hbSbf hbSbfshBKB SKdbfKLB flSDBf lBSL so d hbahkfbk hbsfkhlblhbf hbSbf d hbahkfbk hbsfkhlblhbf hbSbf hbSbfshBKB SKdbfKLB flSDBf lBSL so",
+    description: "Lorum und hbahkfbk hbsfkhlblhbf d hbahkfbk hbsfkhlblhbf hbSbf d hbahkfbk hbsfkhlblhbf hbSbf d hbahkfbk hbsfkhlblhbf hbSbf hbSbfshBKB SKdbfKLB flSDBf lBSL so d",
     date: '2001-08-17',
     time: '10:30',
     age: [ '18' ],
@@ -21,14 +26,19 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues}) => {
     telefon: '123456789',
     activity: 'Fußball'};
 
-    //const data = createValues;
+    console.log("Object" + createValues);
+    console.log("String" + JSON.stringify(createValues))
+
+   // data = createValues;
 
     useEffect(() => {
         onNavTypeChange("cardInspectPage");
       });
 
-      let ageFormated;
+    console.log("IMAGE" + data.image);
+    console.log("TYPE" + newImage.type);
 
+      let ageFormated;
       if(data.age.length===1){
           ageFormated = data.age[0] + " J";
       }
@@ -37,16 +47,34 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues}) => {
       }
 
     function datumUmwandler(date){
-        const info = date.split("-");
+        const cleanUp = date.replace("\"", "");
+        const info = cleanUp.split("-");
         const newDatum=`${info[2]}.${info[1]}.${info[0]}`;
 
         return newDatum;
     }
 
+    const onSubmit = () => {
+        console.log("onsubmit");
+        const file = data.image;
+        delete data.image;
+        const reader = new FileReader()
+        const blob = new Blob([file], { type: file.type });
+        reader.readAsDataURL(blob)
+        reader.onload = () => {
+            console.log(reader.result)
+            const base64Obj = {image: reader.result};
+            onCreateValuesChange({...data, ...base64Obj})
+            }
+        setToValueCreate(true);
+        
+    }
+
     return ( 
         <div className="createPages">
+            {toValueCreate && <Navigate to="/create/finish"/>}
          <div className="image-wrapper">
-                <img className="image" src="https://th.bing.com/th/id/OIP.-XS8esOqgS6IksKfObYnkAHaEK?pid=ImgDet&rs=1" alt="Beispiel Bild"/>
+                <img className="image" src={data.image} alt="Beispiel Bild"/>
             </div>
             <div className="content">
                 <div className="titel">
@@ -74,7 +102,7 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues}) => {
                     <p className="kontaktText">{data.eMail}</p>
                 </div>
             </div>
-        <Link to="/create/finish" style={{color: "black"}}>
+        <Link to="/create/finish" style={{color: "black"}} onClick={onSubmit}>
         <div className="button" id="create">
             <Button version="dick" isDisabled={false}>Posten</Button>
         </div>

@@ -4,8 +4,10 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import mediImage from "../../mediImage.png"
 
-const CreatePageFinish = ({navType, onNavTypeChange}) => {
-
+const CreatePageFinish = ({navType, onNavTypeChange, createValues, onCreateValuesChange}) => {
+    console.log("FINISH " + createValues);
+    console.log("FINISH " + JSON.stringify(createValues));
+    console.log("FINISH" + createValues.image);
     
     useEffect(() => {
         onNavTypeChange("cardInspectPage");
