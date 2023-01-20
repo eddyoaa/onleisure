@@ -17,9 +17,7 @@ const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSe
                             const fetchPictures = async () => {
                                 return( await fetch(`http://localhost:80/search`, {
                                     method: "POST", 
-                                    headers: {
-                                      'Content-Type': 'application/json',
-                                    },
+                      
                                     withCredentials: true,    
                                     crossorigin: true, 
                                     body: search

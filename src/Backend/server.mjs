@@ -19,16 +19,18 @@ const uri = process.env.ATLAS_APIKEY;
 //process.env.ATLAS_APIKEY;
 
 app.use(cors({ origin: "*"}));
-app.use(bodyParser.json({
-    type: function() {
-      return true;
-    },
-  }));
+// app.use(bodyParser.json({
+//     type: function() {
+//       return true;
+//     },
+//   }));
 
 app.maxHeaderSize = 1024* 1024* 50;
 
-  app.use(bodyParser.json({limit: '50mb'}));
-  app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit: 50000}));
+  app.use(bodyParser.json({limit: '150mb',  extended: true, type: function() {
+    return true;
+  }}));
+  app.use(bodyParser.urlencoded({limit: '150mb', extended: true, parameterLimit: 50000}));
 
 //   var jsonParser       = express.json({limit:1024*1024*20, type:'application/json'});
 //   var urlencodedParser = express.urlencoded({ extended:true,limit:1024*1024*20,type:'application/x-www-form-urlencoded' })
@@ -111,30 +113,31 @@ app.get('/offer/:id', async (req, res) => {
 app.post('/create', async (req, res) => {
     console.log(req)
 
-    if(req.file.size > 10000000){
-        return res.status(413).json({error: "File size too large"})
-    }
+    // if(req.file.size > 10000000){
+    //     return res.status(413).json({error: "File size too large"})
+    // }
 
     try 
     {
-        const data = new Offer({
-            _id: new mongoose.Types.ObjectId(),
-            title: req.body.title,
-            description: req.body.description,
-            adress: req.body.adress,
-            date: req.body.date,
-            time: req.body.time,
-            city: req.body.city,
-            age: req.body.age,
-            location_Outside: req.body.location_Outside,
-            location_Inside: req.body.location_Inside,
-            eMail: req.body.eMail,
-            telefon: req.body.telefon,
-            activity: req.body.activity,
-            image: req.body.image,
-            collection: 'offers'})
-        await data.save()
-        res.status(200).send(data)
+        // const data = new Offer({
+        //     _id: new mongoose.Types.ObjectId(),
+        //     title: req.body.title,
+        //     description: req.body.description,
+        //     adress: req.body.adress,
+        //     date: req.body.date,
+        //     time: req.body.time,
+        //     city: req.body.city,
+        //     age: req.body.age,
+        //     location_Outside: req.body.location_Outside,
+        //     location_Inside: req.body.location_Inside,
+        //     eMail: req.body.eMail,
+        //     telefon: req.body.telefon,
+        //     activity: req.body.activity,
+        //     image: req.body.image,
+        //     collection: 'offers'})
+        // await data.save()
+
+        res.status(200).send("hallo")
     } catch(error) 
     {
         res.status(500).send(error.message);
