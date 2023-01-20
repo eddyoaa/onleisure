@@ -1,3 +1,6 @@
+
+import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
 //import { MongoClient } from 'mongodb';
 import mongoose from 'mongoose';
@@ -6,12 +9,15 @@ import process from 'node:process';
 import bodyParser from 'body-parser';
 
 
+
 const app = express();
 const port = process.env.PORT || 80;
 // stating local db:
 // "C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe" --dbpath="c:\data\db"
 // const uri = `mongodb+srv://LeaScal:5bFHraQUJtK0mRDW@backendprojekt.kmmdivn.mongodb.net/?retryWrites=true&w=majority`;
-const uri = 'mongodb://localhost:27017';
+const uri = process.env.ATLAS_APIKEY;
+ 
+//process.env.ATLAS_APIKEY;
 
 app.use(bodyParser.json({
     type: function() {
@@ -21,9 +27,9 @@ app.use(bodyParser.json({
 
 mongoose.set('strictQuery', true); 
 
-const connectToDB = async () => {
+const connectToDB = () => {
     try {
-        await mongoose.connect(uri);
+         mongoose.connect(uri);
         console.log("db started")
 
     } catch(error) {
