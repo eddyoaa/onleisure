@@ -7,7 +7,7 @@ import ArrowIcon from '@mui/icons-material/KeyboardBackspace';
 import logoShort from "../../logo_short.svg";
 import LanguageMenu from "../LanguageMenu/LanguageMenu";
 import { Player } from "@lottiefiles/react-lottie-player";
-import logoAnimation from "../../lottiefiles/logo animation.json"
+//import logoAnimation from "../../lottiefiles/logo animation.json"
 import { LinearProgress } from "@mui/material";
 
 const Navbar = ({navType, onNavTypeChange, progressValue}) => {
@@ -97,38 +97,38 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
             </>
             );
     }
-    else if (navType==="startPageOne"){
-        return (    
-            <>   
-            <div className="navbar">
-                <div className="topbar" id="startPageOne">
-                    <div className="icon--button" id="language">
-                    <LanguageIcon 
-                        sx={{ fontSize: 32}}
-                        onClick = {handleLanguageClick}
-                        />
-                    </div>
-                    <Link to="/" style={{color: "black"}}>
-                    <div className="navbar--logo"> 
-                            <Player className="navbar-player"
-                                autoplay={true}
-                                onEvent={event => {
-                                    if (event === 'complete') onNavTypeChange("startPage"); // check event type and do something
-                                  }}
-                                src={logoAnimation}
-                                />
-                    </div>
-                    </Link>
-                    <div className="icon--button"  id="search">
-                    <SearchIcon sx={{ color: "white" }}/> 
-                    </div>
+    // else if (navType==="startPageOne"){
+    //     return (    
+    //         <>   
+    //         <div className="navbar">
+    //             <div className="topbar" id="startPageOne">
+    //                 <div className="icon--button" id="language">
+    //                 <LanguageIcon 
+    //                     sx={{ fontSize: 32}}
+    //                     onClick = {handleLanguageClick}
+    //                     />
+    //                 </div>
+    //                 <Link to="/" style={{color: "black"}}>
+    //                 <div className="navbar--logo"> 
+    //                         <Player className="navbar-player"
+    //                             autoplay={true}
+    //                             onEvent={event => {
+    //                                 if (event === 'complete') onNavTypeChange("startPage"); // check event type and do something
+    //                               }}
+    //                             src={logoAnimation}
+    //                             />
+    //                 </div>
+    //                 </Link>
+    //                 <div className="icon--button"  id="search">
+    //                 <SearchIcon sx={{ color: "white" }}/> 
+    //                 </div>
 
-                </div>
-                {isShown && <div className="languagemenu"> <LanguageMenu /> </div>}
-            </div>
-            </>
-            );
-    }
+    //             </div>
+    //             {isShown && <div className="languagemenu"> <LanguageMenu /> </div>}
+    //         </div>
+    //         </>
+    //         );
+    // }
             //Navbar (cardInspect Seite)
     else if (navType==="cardInspectPage"){
         return (       
