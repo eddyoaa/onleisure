@@ -58,7 +58,10 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
                 onSubmit={(values, { setSubmitting }) => {
                     setSubmitting(false);
                     console.log("Create Values:" + values);
-                    const combinedValues = {...createValues, ...values};
+                    const cityObj = {city: values.city.toLowerCase()}
+                    delete values.city;
+                    const cityCombined = {...values, ...cityObj}
+                    const combinedValues = {...createValues, ...cityCombined};
                     const moreCombined = datetimeUmwandler(combinedValues.datetime, combinedValues);
                     onCreateValuesChange(moreCombined);
                     setToValueCreate(true);
