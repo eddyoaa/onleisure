@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 import mediImage from "../../mediImage.png"
 
 const CreatePageFinish = ({navType, onNavTypeChange, createValues, onCreateValuesChange}) => {
-    console.log("FINISH " + createValues);
     console.log("FINISH " + JSON.stringify(createValues));
-    console.log("FINISH" + createValues.image);
     
     useEffect(() => {
         onNavTypeChange("cardInspectPage");
@@ -16,11 +14,11 @@ const CreatePageFinish = ({navType, onNavTypeChange, createValues, onCreateValue
       useEffect(()=> {
         console.log("Console: fetch API");
         const fetchPictures = async () => {
-            return( await fetch(`https://onleisure.onrender.com/create`, {
+            return( await fetch(`http://localhost:80/create`, {
                 method: "POST", 
                 withCredentials: true,    
                 crossorigin: true, 
-                body: createValues
+                body: JSON.stringify(createValues)
               })
              
               );

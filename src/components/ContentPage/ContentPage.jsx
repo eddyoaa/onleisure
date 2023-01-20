@@ -15,8 +15,11 @@ const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSe
                         useEffect(()=> {
                             console.log("Console: fetch API");
                             const fetchPictures = async () => {
-                                return( await fetch(`https://onleisure.onrender.com/search`, {
+                                return( await fetch(`http://localhost:80/search`, {
                                     method: "POST", 
+                                    headers: {
+                                      'Content-Type': 'application/json',
+                                    },
                                     withCredentials: true,    
                                     crossorigin: true, 
                                     body: search

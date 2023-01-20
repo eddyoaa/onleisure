@@ -9,8 +9,6 @@ import process from 'node:process';
 import bodyParser from 'body-parser';
 import cors from "cors";
 
-
-
 const app = express();
 const port = process.env.PORT || 80;
 // stating local db:
@@ -20,11 +18,23 @@ const uri = process.env.ATLAS_APIKEY;
  
 //process.env.ATLAS_APIKEY;
 
+app.use(cors({ origin: "*"}));
 app.use(bodyParser.json({
     type: function() {
       return true;
     },
   }));
+
+app.maxHeaderSize = 1024* 1024* 50;
+
+  app.use(bodyParser.json({limit: '50mb'}));
+  app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit: 50000}));
+
+//   var jsonParser       = express.json({limit:1024*1024*20, type:'application/json'});
+//   var urlencodedParser = express.urlencoded({ extended:true,limit:1024*1024*20,type:'application/x-www-form-urlencoded' })
+
+//   app.use(jsonParser);
+//   app.use(urlencodedParser);
 
 mongoose.set('strictQuery', true); 
 
@@ -39,12 +49,7 @@ const connectToDB = () => {
 }
 
 connectToDB()
-app.use(express.json());
-
-app.use(function(req, res, next) {
-        cors({ credentials: true })
-      next()
-  });
+// app.use(express.json());
 
 //Endpoints Offer
 app.get('/offers', async (req, res) => { 
@@ -104,11 +109,16 @@ app.get('/offer/:id', async (req, res) => {
     });
   
 app.post('/create', async (req, res) => {
+    console.log(req)
+
+    if(req.file.size > 10000000){
+        return res.status(413).json({error: "File size too large"})
+    }
+
     try 
     {
         const data = new Offer({
             _id: new mongoose.Types.ObjectId(),
-    
             title: req.body.title,
             description: req.body.description,
             adress: req.body.adress,
