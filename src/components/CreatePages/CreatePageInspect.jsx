@@ -12,7 +12,7 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValu
 
     let data =     {
     adress: 'Musterstraße 12',
-    image: newImage,
+    image: "newImage",
     title: "Titel",
     city: 'München',
     description: "Lorum und hbahkfbk hbsfkhlblhbf d hbahkfbk hbsfkhlblhbf hbSbf d hbahkfbk hbsfkhlblhbf hbSbf d hbahkfbk hbsfkhlblhbf hbSbf hbSbfshBKB SKdbfKLB flSDBf lBSL so d",
@@ -28,7 +28,7 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValu
     console.log("Object" + createValues);
     console.log("String" + JSON.stringify(createValues))
 
-    data = createValues;
+    //data = createValues;
 
     useEffect(() => {
         onNavTypeChange("cardInspectPage");
