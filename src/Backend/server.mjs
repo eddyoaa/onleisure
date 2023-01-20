@@ -108,6 +108,7 @@ app.post('/create', async (req, res) => {
     {
         const data = new Offer({
             _id: new mongoose.Types.ObjectId(),
+    
             title: req.body.title,
             description: req.body.description,
             adress: req.body.adress,
@@ -120,6 +121,7 @@ app.post('/create', async (req, res) => {
             eMail: req.body.eMail,
             telefon: req.body.telefon,
             activity: req.body.activity,
+            image: req.body.image,
             collection: 'offers'})
         await data.save()
         res.status(200).send(data)
