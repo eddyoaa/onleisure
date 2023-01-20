@@ -27,8 +27,8 @@ app.use(bodyParser.json({
 
 app.maxHeaderSize = 1024* 1024* 50;
 
-  app.use(bodyParser.json({limit: '50mb'}));
-  app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit: 50000}));
+  app.use(bodyParser.json({limit: '150mb'}));
+  app.use(bodyParser.urlencoded({limit: '150mb', extended: true, parameterLimit: 50000}));
 
 //   var jsonParser       = express.json({limit:1024*1024*20, type:'application/json'});
 //   var urlencodedParser = express.urlencoded({ extended:true,limit:1024*1024*20,type:'application/x-www-form-urlencoded' })
