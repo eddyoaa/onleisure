@@ -18,6 +18,7 @@ const CreatePageFinish = ({navType, onNavTypeChange, createValues, onCreateValue
         const fetchPictures = async () => {
             return( await fetch(`https://onleisure.onrender.com/create`, {
                 method: "POST", 
+                headers: {"Content-Type": "application/json"},
                 withCredentials: true,    
                 crossorigin: true, 
                 body: JSON.stringify(createValues)
