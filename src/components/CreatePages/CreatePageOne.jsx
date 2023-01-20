@@ -19,9 +19,15 @@ const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValue
 
     const onSubmit = () => {
         console.log("onsubmit");
-        const formData = new FormData();
-        formData.append("image", image)
-        onCreateValuesChange({image:image});
+        const file = image;
+        const reader = new FileReader()
+        const blob = new Blob([file], { type: "image/*" });
+        reader.readAsDataURL(blob)
+        reader.onload = () => {
+            console.log(reader.result)
+            const base64Obj = {image: reader.result};
+            onCreateValuesChange(base64Obj)
+            };
         setToValueCreate(true);}
 
     const handleChange = (e) => {

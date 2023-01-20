@@ -32,7 +32,7 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
     return ( 
         <div className="inspectPage">
             <div className="image-wrapper">
-                <img className="image" src="https://th.bing.com/th/id/OIP.-XS8esOqgS6IksKfObYnkAHaEK?pid=ImgDet&rs=1" alt="Beispiel Bild"/>
+                <img className="image" src={data.image} alt="Beispiel Bild"/>
             </div>
             <div className="content">
                 <div className="titel">

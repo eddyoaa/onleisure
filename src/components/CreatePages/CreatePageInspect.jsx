@@ -7,7 +7,6 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import newImage from "../../yueying-ni-vDPF4aE-Xno-unsplash.jpg"
 
-
 const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
 
@@ -29,14 +28,13 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValu
     console.log("Object" + createValues);
     console.log("String" + JSON.stringify(createValues))
 
-   // data = createValues;
+    data = createValues;
 
     useEffect(() => {
         onNavTypeChange("cardInspectPage");
       });
 
     console.log("IMAGE" + data.image);
-    console.log("TYPE" + newImage.type);
 
       let ageFormated;
       if(data.age.length===1){
@@ -56,16 +54,6 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValu
 
     const onSubmit = () => {
         console.log("onsubmit");
-        const file = data.image;
-        delete data.image;
-        const reader = new FileReader()
-        const blob = new Blob([file], { type: file.type });
-        reader.readAsDataURL(blob)
-        reader.onload = () => {
-            console.log(reader.result)
-            const base64Obj = {image: reader.result};
-            onCreateValuesChange({...data, ...base64Obj})
-            }
         setToValueCreate(true);
         
     }

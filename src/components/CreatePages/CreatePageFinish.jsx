@@ -13,6 +13,31 @@ const CreatePageFinish = ({navType, onNavTypeChange, createValues, onCreateValue
         onNavTypeChange("cardInspectPage");
       });
 
+      useEffect(()=> {
+        console.log("Console: fetch API");
+        const fetchPictures = async () => {
+            return( await fetch(`https://onleisure.onrender.com/create`, {
+                method: "POST", 
+                withCredentials: true,    
+                crossorigin: true, 
+                body: createValues
+              })
+             
+              );
+        };
+
+        fetchPictures()
+            .then(async res => {
+                console.log("Console: process Data");
+                console.log(res);
+                return await res.json();
+            })
+            .then(data => {
+                console.log("Console: Data:");
+                console.log(data);
+            })
+    },[createValues, onCreateValuesChange]);
+
     return ( 
         <div className="createPages">
         <div className="contentCreateFinish">

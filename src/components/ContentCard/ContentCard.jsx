@@ -26,7 +26,7 @@ const ContentCard = ({data}) => {
 
             <div className="card-platzhalter">
             
-            {/* <img className="card-image">C:\Users\leaze\OneDrive\Desktop\onleisure\src\components\ContentCard\regular-16-9.jfif</img> */}
+            <img className="image" src={data.image} alt="Beispiel Bild"/>
             <div className="datum-frame">
                 <div className="datum"> <p>{datumUmwandler(data.date) + " - " + data.time + " Uhr"}</p> </div>
             </div>
