@@ -2,7 +2,7 @@ import './App.css';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { appTheme } from "./themes/theme.ts";
 import { useState } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
 import ContentPage from "./components/ContentPage/ContentPage";
 import FilterMenu from "./components/FilterMenu/FilterMenu";
@@ -30,7 +30,7 @@ const App = (props) => {
   return ( 
     <ThemeProvider theme={appTheme}>
     <CssBaseline enableColorScheme />
-    <BrowserRouter>
+    <HashRouter>
       <div className="app">
         <Navbar  
           navType = {navType}
@@ -116,7 +116,7 @@ const App = (props) => {
           </Routes>
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
     </ThemeProvider>
    );
 }
