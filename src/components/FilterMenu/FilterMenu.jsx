@@ -58,7 +58,7 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
                     
                     <div className="kategorieAbfrage">
                         <label htmlFor="activity">Aktivität</label>
-                        <Field className="kategorieEingabefeld" name="activity" as="select" placeholder="Wähle eine Kategrie aus...">
+                        <Field className="kategorieEingabefeldFilter" name="activity" as="select" placeholder="Wähle eine Kategrie aus...">
                             <option disabled value="">Wähle eine Aktivität...</option>
                             <option></option>
                             <option>Fußball</option>
@@ -66,7 +66,7 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
                             <option>Brettspiele</option>
                             <option>Tupperparty</option>
                         </Field>
-
+                        
                         <ErrorMessage name="activity" />
                     </div>
 
@@ -80,7 +80,7 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
 
                     <div className="ortAbfrage">
                         <label htmlFor="toggles">Ort</label>
-                        <div className="toggle_drinnen">
+                        <div className="toggle_drinnen_Filter">
                         <Switch
                                         className="toggle-switch" 
                                         name="location_Inside"
@@ -92,7 +92,7 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
                                         />
                             <label htmlFor="location_Inside">Drinnen</label>
                         </div>
-                        <div className="toggle_draussen">
+                        <div className="toggle_draussen_Filter">
                                         <Switch
                                         className="toggle-switch" 
                                         name="location_Outside"

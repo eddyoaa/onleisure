@@ -57,9 +57,10 @@ label{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    top: 10px;
 }
 
-.kategorieEingabefeld{
+.kategorieEingabefeldFilter{
     width: 360px;
     height: 56px;
     padding-left: 10px;
