@@ -1,6 +1,4 @@
 
-import dotenv from 'dotenv';
-dotenv.config();
 import express from 'express';
 //import { MongoClient } from 'mongodb';
 import mongoose from 'mongoose';
@@ -42,7 +40,11 @@ mongoose.set('strictQuery', true);
 
 const connectToDB = () => {
     try {
-         mongoose.connect(uri);
+         mongoose
+         .connect(uri)
+         .then(() => {
+            console.log("Conected to Mongos")
+         });
         console.log("db started")
 
     } catch(error) {
@@ -156,5 +158,5 @@ app.delete('/offer/:id', async (req, res) => {
     })
 
     app.listen(port, function() {
-        console.log('listening on 80');
+        console.log('listening on', port);
       });
