@@ -9,6 +9,7 @@ import newImage from "../../yueying-ni-vDPF4aE-Xno-unsplash.jpg"
 
 const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
+    console.log(createValues);
 
     let data =     {
     adress: 'Musterstraße 12',
@@ -25,16 +26,11 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValu
     telefon: '123456789',
     activity: 'Fußball'};
 
-    console.log("Object" + createValues);
-    console.log("String" + JSON.stringify(createValues))
-
-    //data = createValues;
+    data = createValues;
 
     useEffect(() => {
         onNavTypeChange("cardInspectPage");
       });
-
-    console.log("IMAGE" + data.image);
 
       let ageFormated;
       if(data.age.length===1){

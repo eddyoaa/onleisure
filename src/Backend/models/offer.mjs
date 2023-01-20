@@ -30,11 +30,7 @@ const offerSchema = new Schema({
         },
            
     date:    {  type: String,
-            required: true,
-            validate: {
-                validator: date => validator.isDate(date),
-                message: 'date is not valid.'
-              }
+            required: true
          }, 
 
          time :    {  type: String,

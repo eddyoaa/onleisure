@@ -119,28 +119,13 @@ app.post('/create', async (req, res) => {
 
     try 
     {
-        // const data = new Offer({
-        //     _id: new mongoose.Types.ObjectId(),
-        //     title: req.body.title,
-        //     description: req.body.description,
-        //     adress: req.body.adress,
-        //     date: req.body.date,
-        //     time: req.body.time,
-        //     city: req.body.city,
-        //     age: req.body.age,
-        //     location_Outside: req.body.location_Outside,
-        //     location_Inside: req.body.location_Inside,
-        //     eMail: req.body.eMail,
-        //     telefon: req.body.telefon,
-        //     activity: req.body.activity,
-        //     image: req.body.image,
-        //     collection: 'offers'})
-        // await data.save()
+         const data = new Offer(req.body)
+         await data.save()
 
-        res.status(200).send("hallo")
+        res.status(200).send(data)
     } catch(error) 
     {
-        res.status(500).send(error.message);
+        res.status(500).send({message: error.message});
     }
   })
 

@@ -23,6 +23,7 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
 
 
     function datumUmwandler(date){
+        const cleanUp = date.replace("\"", "");
         const info = date.split("-");
         const newDatum=`${info[2]}.${info[1]}.${info[0]}`;
 
