@@ -7,6 +7,7 @@ import mongoose from 'mongoose';
 import Offer from "./models/offer.mjs";
 import process from 'node:process';
 import bodyParser from 'body-parser';
+import cors from "cors";
 
 
 
@@ -40,11 +41,9 @@ const connectToDB = () => {
 connectToDB()
 app.use(express.json());
 
-app.use('/*', function(req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS, POST, PUT, DELETE")
-    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, Origin, Content-Type, Accept, Authorization");
-    next()
+app.use(function(req, res, next) {
+        cors({ credentials: true })
+      next()
   });
 
 //Endpoints Offer
