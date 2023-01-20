@@ -57,7 +57,7 @@ const CreatePageTwo = ({navType, onNavTypeChange, progressValue, onProgressValue
         }) => (
         <div className="form">
             <Form>
-                <div className="abfragen">
+                <div className="abfragen2">
                     <h3 className="text-one">Füge eine Beschreibung hinzu</h3>
 
                     <div className="TitelAbfragen">
