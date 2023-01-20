@@ -1,7 +1,7 @@
 import "./CreatePages.css"
 import Button from "../Button/Button";
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
-import { Navigate, Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import {React, useState ,useEffect} from "react";
 import "./image.css";
 
