@@ -16,6 +16,7 @@ const CreatePageFinish = ({navType, onNavTypeChange, createValues, onCreateValue
         const fetchPictures = async () => {
             return( await fetch(`http://localhost:80/create`, {
                 method: "POST", 
+                headers: {"Content-Type": "application/json"},
                 withCredentials: true,    
                 crossorigin: true, 
                 body: JSON.stringify(createValues)

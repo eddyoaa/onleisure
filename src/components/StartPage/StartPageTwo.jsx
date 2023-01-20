@@ -47,7 +47,7 @@ const StartPageTwo = ({search, onSearchChange, navType, onNavTypeChange}) => {
         }) => (
         <div className="form">
             <Form>
-                <div className="abfragen">
+                <div className="abfragen2">
                     <div className="standortAbfrage">
                         <label htmlFor="city">Standort</label>
                         <Field className="standortEingabefeld" name="city" type="text" placeholder="Gib deine Stadt ein..." />
