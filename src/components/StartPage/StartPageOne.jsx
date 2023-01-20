@@ -16,11 +16,11 @@ const StartPageOne = ({navType, onNavTypeChange}) => {
     return ( 
         <div className="startPage">
         <div>
-            <Player
+            {/* <Player
             src={morphAnimation}
             className="playerOne"
             autoplay
-            loop/>
+            loop/> */}
              <h1 className="pageOne">
                 Finde deine neue Freizeitaktivität
             </h1>
