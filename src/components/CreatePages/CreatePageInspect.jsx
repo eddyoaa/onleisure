@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
-import newImage from "../../yueying-ni-vDPF4aE-Xno-unsplash.jpg"
+//import newImage from "../../yueying-ni-vDPF4aE-Xno-unsplash.jpg"
 
 const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);

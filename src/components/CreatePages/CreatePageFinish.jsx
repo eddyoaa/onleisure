@@ -42,7 +42,8 @@ const CreatePageFinish = ({navType, onNavTypeChange, createValues, onCreateValue
         <div className="contentCreateFinish">
         <img
             src={mediImage}
-            className="mediImage"/>
+            className="mediImage"
+            alt=""/>
              <h1 className="createFininsh">
              Deine Anzeige wurde Erfolgreich gepostet.
             </h1>
