@@ -12,6 +12,7 @@
     "@mui/x-date-pickers": "^5.0.14",
     "@types/react-router-dom": "^5.3.3",
     "cors": "^2.8.5",
+    "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
     "formik": "^2.2.9",
     "react": "^18.2.0",
