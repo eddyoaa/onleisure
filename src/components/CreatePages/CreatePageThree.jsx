@@ -6,9 +6,6 @@ import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import * as Yup from 'yup';
 import React from "react";
-import { LocalizationProvider} from "@mui/x-date-pickers";
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import DatePickerField from "./DatePickerField";
 
 const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
@@ -35,13 +32,12 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
         <div className="createPages">
             {toValueCreate && <Navigate to="/create/4"/>}
 
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
+         
 
             <Formik
             initialValues={{ 
                 adress: createValues.adress || "",
-                city: createValues.city || "",
-                datetime: createValues.datetime
+                city: createValues.city || ""
             }}
 
             validationSchema={Yup.object({
@@ -94,14 +90,7 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
                         <ErrorMessage name="city" />
                     </div>
 
-                    <div className="DatumAbfrage">
-                        <Field  
-                            component={DatePickerField}
-                            className="datetimepicker"
-                            name="datetime"
-                            label="Start Zeit"
-                            />
-                    </div>
+                
                 <div className="button-wrapper">
                     <Button type="submit" version="dick" isDisabled={false}>Weiter</Button>
                 </div>
@@ -110,7 +99,7 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
         </div>
         )}
             </Formik>
-            </LocalizationProvider>
+            
             </div>
      );}
 export default CreatePageThree;

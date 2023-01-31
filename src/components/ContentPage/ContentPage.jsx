@@ -3,7 +3,6 @@ import ContentCard from '../ContentCard/ContentCard';
 import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 //import loadingAnimation from "../../lottiefiles/loading animation.json"
-import { Player } from '@lottiefiles/react-lottie-player';
 
 const ContentPage = ({navType, onNavTypeChange, data, onDataChange, search, onSearchChange}) => {
   const [fetchedData, setFetchedData] = useState("");

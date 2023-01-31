@@ -1,6 +1,5 @@
 import "./StartPage.css"
 import Button from "../Button/Button";
-import { Player } from '@lottiefiles/react-lottie-player';
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 //import morphAnimation from "../../lottiefiles/morphing animation.json"

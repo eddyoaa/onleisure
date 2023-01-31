@@ -1,6 +1,4 @@
-import "./ContentInspect.css"
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import EmailIcon from '@mui/icons-material/Email';
+import "./ContentInspect.css";
 import { useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 
@@ -53,11 +51,11 @@ const ContentInspect = ({navType, onNavTypeChange}) => {
                 <p className="infotext">{data.description}</p>
                 <p className="kontaktÜberschrift">Kontakt</p>
                 <div className="kontakt">
-                    <LocalPhoneIcon sx={{ fontSize: 32}}/>
+                    
                     <p className="kontaktText">{data.telefon}</p>
                 </div>
                 <div className="kontakt">
-                    <EmailIcon sx={{ fontSize: 32}}/>
+                    
                     <p className="kontaktText">{data.eMail}</p>
                 </div>
             </div>

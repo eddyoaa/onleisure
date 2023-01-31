@@ -1,7 +1,6 @@
 import {React, useEffect, useState} from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { Switch } from '@mui/material';
 import Button from "../Button/Button";
 import "./FilterMenu.css";
 import { Navigate } from 'react-router-dom';
@@ -19,9 +18,8 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
         initialValues={{ 
             city: search.city, 
             activity: "", 
-            age: "", 
-            location_Inside: "true", 
-            location_Outside: "true"}}
+            age: ""
+        }}
 
         validationSchema={Yup.object({
             city: Yup.string()
@@ -78,33 +76,6 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
                         </div>
                     </div>
 
-                    <div className="ortAbfrage">
-                        <label htmlFor="toggles">Ort</label>
-                        <div className="toggle_drinnen_Filter">
-                        <Switch
-                                        className="toggle-switch" 
-                                        name="location_Inside"
-                                        value="true"
-                                        checked={values.location_Inside === "true"}
-                                        onChange={(event, checked) => {
-                                            setFieldValue("location_Inside", checked ? "true" : "false");
-                                        }}
-                                        />
-                            <label htmlFor="location_Inside">Drinnen</label>
-                        </div>
-                        <div className="toggle_draussen_Filter">
-                                        <Switch
-                                        className="toggle-switch" 
-                                        name="location_Outside"
-                                        value="true"
-                                        checked={values.location_Outside === "true"}
-                                        onChange={(event, checked) => {
-                                            setFieldValue("location_Outside", checked ? "true" : "false");
-                                        }}
-                                        />
-                            <label htmlFor="location_Outside">Draußen</label>
-                        </div>
-                    </div>
                 </div>
                 <div className="button-container">   
                 <Button type="submit" version="dick" isDisabled={false}>Suchen</Button> 

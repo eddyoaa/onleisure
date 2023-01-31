@@ -5,7 +5,6 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import * as Yup from 'yup';
-import { Switch } from '@mui/material';
 
 const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValueChange, createValues, onCreateValuesChange}) => {
     const [toValueCreate, setToValueCreate] = useState(false);
@@ -24,8 +23,6 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                 age: [],
                 age1: "",
                 age2: "",
-                location_Outside: false,
-                location_Inside: false,
                 activity: createValues.activity
             }}
     
@@ -81,35 +78,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                         <ErrorMessage name="description" />
                     </div>
 
-                    <div className="ortAbfrage2">
-                        <label htmlFor="toggles">Ort</label>
-                        <div className="toggle_drinnen">
-                                    <Switch
-                                        size="large"
-                                        className="toggle-switch2" 
-                                        name="location_Inside"
-                                        value="true"
-                                        checked={values.location_Inside === "true"}
-                                        onChange={(event, checked) => {
-                                            setFieldValue("location_Inside", checked ? "true" : "false");
-                                        }}
-                                        />
-                            <label htmlFor="location_Inside">Drinnen</label>
-                        </div>
-                        <div className="toggle_draussen2">
-                                        <Switch
-                                        size="large"
-                                        className="toggle-switch2" 
-                                        name="location_Outside"
-                                        value="true"
-                                        checked={values.location_Outside === "true"}
-                                        onChange={(event, checked) => {
-                                            setFieldValue("location_Outside", checked ? "true" : "false");
-                                        }}
-                                        />
-                            <label htmlFor="location_Outside">Draußen</label>
-                        </div>
-                        </div>
+        
 
                     <div className="AktivitätAbfragen">
                         <h4 className="labelAktiv">Aktivität</h4>

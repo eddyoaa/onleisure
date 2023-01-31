@@ -3,8 +3,6 @@ import "../ContentInspect/ContentInspect.css"
 import Button from "../Button/Button";
 import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import EmailIcon from '@mui/icons-material/Email';
 //import newImage from "../../yueying-ni-vDPF4aE-Xno-unsplash.jpg"
 
 const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValuesChange}) => {
@@ -78,11 +76,11 @@ const CreatePageInspect = ({navType, onNavTypeChange, createValues, onCreateValu
                 <p className="infotext">{data.description}</p>
                 <p className="kontaktÜberschrift">Kontakt</p>
                 <div className="kontakt">
-                    <LocalPhoneIcon sx={{ fontSize: 32}}/>
+                  
                     <p className="kontaktText">{data.telefon}</p>
                 </div>
                 <div className="kontakt">
-                    <EmailIcon sx={{ fontSize: 32}}/>
+                   
                     <p className="kontaktText">{data.eMail}</p>
                 </div>
             </div>

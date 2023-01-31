@@ -1,6 +1,5 @@
 import "./CreatePages.css"
 import Button from "../Button/Button";
-import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import { Navigate } from "react-router-dom";
 import {React, useState ,useEffect} from "react";
 import "./image.css";
@@ -49,9 +48,7 @@ const CreatePageOne = ({navType, onNavTypeChange, progressValue, onProgressValue
                 </div>
 
                 <div className="icon-image">
-                    <AddPhotoAlternateIcon 
-                        sx={{ fontSize: 92}} 
-                        /*onClick={() => {navigate(-1)}}*//>
+                   
                 </div>
             </div>
                 <div className="buttonCreate1" id="create" onClick={onSubmit}>

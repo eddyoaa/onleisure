@@ -1,14 +1,9 @@
 import "./Navbar.css"
 import {Link, useNavigate} from "react-router-dom";
 import { useState } from "react";
-import LanguageIcon from '@mui/icons-material/Language';
-import SearchIcon from '@mui/icons-material/Search';
-import ArrowIcon from '@mui/icons-material/KeyboardBackspace';
 import logoShort from "../../logo_short.svg";
 import LanguageMenu from "../LanguageMenu/LanguageMenu";
-import { Player } from "@lottiefiles/react-lottie-player";
 //import logoAnimation from "../../lottiefiles/logo animation.json"
-import { LinearProgress } from "@mui/material";
 
 const Navbar = ({navType, onNavTypeChange, progressValue}) => {
     const [isShown, setIsShown] = useState(false);
@@ -25,10 +20,7 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
         <div className="navbar">
             <div className="topbar">
                 <div className="icon--button">
-                    <LanguageIcon 
-                    sx={{ fontSize: 32}} 
-                    onClick = {handleLanguageClick}
-                    />
+                    
                 </div>
                 <Link to="/" style={{color: "black"}}>
                     <div className="navbar--logo">
@@ -37,7 +29,7 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
                 </Link>
                 <Link to="/filter" style={{color: "black"}}>
                     <div className="icon--button">
-                        <SearchIcon sx={{ fontSize: 32}} />
+                      
                     </div>
                 </Link>
             </div>
@@ -52,7 +44,7 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
         <div className="navbar">
             <div className="topbar">
                 <div className="icon--button">
-                    <LanguageIcon sx={{ color: "white" }}/>
+                  
                 </div>
                 <Link to="/" style={{color: "black"}}>
                     <div className="navbar--logo">
@@ -61,8 +53,7 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
                 </Link>
                 <Link to="/content" style={{color: "black"}}>
                     <div className="icon--button">
-                        <SearchIcon 
-                        sx={{ fontSize: 32}} />
+                       
                     </div>
                 </Link>
             </div>
@@ -77,10 +68,7 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
             <div className="navbar">
                 <div className="topbar">
                     <div className="icon--button" id="language">
-                    <LanguageIcon 
-                        sx={{ fontSize: 32}}
-                        onClick = {handleLanguageClick}
-                        />
+                   
                     </div>
                     <Link to="/" style={{color: "black"}}>
                     <div className="navbar--logo"> 
@@ -88,7 +76,7 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
                     </div>
                     </Link>
                     <div className="icon--button"  id="search">
-                    <SearchIcon sx={{ color: "white" }}/> 
+                   
                     </div>
 
                 </div>
@@ -135,9 +123,7 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
             <div className="navbar">
                 <div className="topbar" id="cardInspectNavbar">
                     <div className="icon--button" id="arrow">
-                    <ArrowIcon 
-                        sx={{ fontSize: 32}} 
-                        onClick={() => {navigate(-1)}}/>
+                    
                     </div>
                     <Link to="/" style={{color: "black"}}>
                         <div className="navbar--logo">
@@ -145,7 +131,7 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
                         </div>
                     </Link>
                     <div className="icon--button"  id="search">
-                    <SearchIcon sx={{ color: "white" }}/> 
+                    
                     </div>
                 </div>
             </div>
@@ -157,9 +143,7 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
             <div className="navbar">
                 <div className="topbar" id="cardInspectNavbar">
                     <div className="icon--button" id="arrow">
-                    <ArrowIcon 
-                        sx={{ fontSize: 32}} 
-                        onClick={() => {navigate(-1)}}/>
+                    
                     </div>
                     <Link to="/" style={{color: "black"}}>
                         <div className="navbar--logo">
@@ -167,13 +151,12 @@ const Navbar = ({navType, onNavTypeChange, progressValue}) => {
                         </div>
                     </Link>
                     <div className="icon--button"  id="search">
-                    <SearchIcon sx={{ color: "white" }}/> 
+                  
                     </div>
                 </div>
             </div>
             <div className="progressBar">
-                <LinearProgress variant="buffer" value={progressValue} valueBuffer={progressValue+20} />
-            </div>
+                 </div>
             </>   
             );
     }

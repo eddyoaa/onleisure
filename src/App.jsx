@@ -1,6 +1,4 @@
 import './App.css';
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { appTheme } from "./themes/theme.ts";
 import { useState } from 'react';
 import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
@@ -28,8 +26,6 @@ const App = (props) => {
 
   console.log(navType);
   return ( 
-    <ThemeProvider theme={appTheme}>
-    <CssBaseline enableColorScheme />
     <HashRouter>
       <div className="app">
         <Navbar  
@@ -117,7 +113,6 @@ const App = (props) => {
         </div>
       </div>
     </HashRouter>
-    </ThemeProvider>
    );
 }
  
