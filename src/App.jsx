@@ -19,7 +19,7 @@ import CreatePageInspect from './components/CreatePages/CreatePageInspect';
 import CreatePageFinish from './components/CreatePages/CreatePageFinish';
 
 const App = (props) => {
-  const [navType, setNavType] = useState("startPage");
+  const [navType, setNavType] = useState("startPageOne");
   const [search, setSearch] = useState("");
   const [data, setData] = useState("");
   const [progressValue, setProgressValue] = useState(0);

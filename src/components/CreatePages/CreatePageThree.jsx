@@ -82,16 +82,16 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
                 <div className="abfragen2">
                     <h3 className="text-one">Wann und wo?</h3>
 
-                    <div className="AdresseAbfragen">
-                    <label htmlFor="labelAdresse">Adresse</label>
-                        <Field className="standortEingabefeld" name="adress" type="text" placeholder="Gib eine Adresse ein..." />
-                        <ErrorMessage name="adress" />
+                    <div className="StadtAdresseAbfragen">
+                        <label htmlFor="labelAdresse">Adresse</label>
+                            <Field className="standortEingabefeld" name="adress" type="text" placeholder="Gib eine Adresse ein..." />
+                            <ErrorMessage name="adress" />
                     </div>
 
-                    <div className="StadtAbfragen">
-                    <label htmlFor="labelStadt">Stadt</label>
-                        <Field className="standortEingabefeld" name="city" type="text" placeholder="Gib eine Stadt ein..." />
-                        <ErrorMessage name="city" />
+                    <div className="StadtAdresseAbfragen">
+                        <label htmlFor="labelStadt">Stadt</label>
+                            <Field className="standortEingabefeld" name="city" type="text" placeholder="Gib eine Stadt ein..." />
+                            <ErrorMessage name="city" />
                     </div>
 
                     <div className="DatumAbfrage">
@@ -102,9 +102,9 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
                             label="Start Zeit"
                             />
                     </div>
-                <div className="button-wrapper">
-                    <Button type="submit" version="dick" isDisabled={false}>Weiter</Button>
-                </div>
+                    <div className="button-wrapper">
+                        <Button type="submit" version="dick" isDisabled={false}>Weiter</Button>
+                    </div>
                 </div>
             </Form>
         </div>
@@ -114,19 +114,3 @@ const CreatePageThree = ({navType, onNavTypeChange, progressValue, onProgressVal
             </div>
      );}
 export default CreatePageThree;
-
-
-
-
-// const DatePickerField = ({ name, value, onChange }) => {
-//   return (
-    // <DatePicker
-    // selected={(value && new Date(value)) || null}
-    // onChange={val => {
-    //     onChange(name, val);
-    // }}/>
-    
-//   );
-// };
-
-// export default DatePickerField;

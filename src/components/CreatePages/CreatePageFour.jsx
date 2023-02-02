@@ -120,6 +120,7 @@ const CreatePageFour = ({navType, onNavTypeChange,progressValue, onProgressValue
                                 <option>Teetreff</option>
                                 <option>Brettspiele</option>
                                 <option>Tupperparty</option>
+                                <option>Sonstiges</option>
                             </Field>
                     </div>
 

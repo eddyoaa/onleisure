@@ -3,24 +3,24 @@ import Button from "../Button/Button";
 import { Player } from '@lottiefiles/react-lottie-player';
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-//import morphAnimation from "../../lottiefiles/morphing animation.json"
+import morphAnimation from "../../lottiefiles/morphing animation.json"
 
 const StartPageOne = ({navType, onNavTypeChange}) => {
 
     
-    // useEffect(() => {
-    //     if(navType!=="startPage"){
-    //     onNavTypeChange("startPageOne");}
-    //   });
+     useEffect(() => {
+         if(navType!=="startPage"){
+         onNavTypeChange("startPageOne");}
+       });
 
     return ( 
         <div className="startPage">
         <div>
-            {/* <Player
+            <Player
             src={morphAnimation}
             className="playerOne"
             autoplay
-            loop/> */}
+            loop/>
              <h1 className="pageOne">
                 Finde deine neue Freizeitaktivität
             </h1>

@@ -65,6 +65,7 @@ const FilterMenu = ({navType, onNavTypeChange, search, onSearchChange}) => {
                             <option>Teetreff</option>
                             <option>Brettspiele</option>
                             <option>Tupperparty</option>
+                            <option>Sonstiges</option>
                         </Field>
                         
                         <ErrorMessage name="activity" />
